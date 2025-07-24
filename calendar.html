@@ -76,7 +76,7 @@
 
   <footer>© 2025 Write Time. All rights reserved.</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script>
     document.body.dataset.theme = localStorage.getItem('theme') || 'light';
 
@@ -113,8 +113,11 @@ document.getElementById('nav-calendar').classList.add('active');
         calendar.render();
       })
       .catch(err => {
-        document.getElementById('calendar').innerHTML = `<p style="color:red;text-align:center;">⚠️ Could not load competitions.json</p>`;
-        console.error(err);
+       document.getElementById('calendar').innerHTML = `
+  <div style="padding:2rem;text-align:center;color:red;">
+    ⚠️ Could not load <code>competitions.json</code>. Please try again later.
+  </div>`;
+
       });
   </script>
 </body>
