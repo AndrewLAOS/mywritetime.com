@@ -235,7 +235,13 @@
         card.innerHTML = `
           <h3><a href="${c.url}" target="_blank">${c.name}</a></h3>
           <p class="meta"><strong>Genre:</strong> ${c.genre} · <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}</p>
-          <p class="meta"><strong>Deadline:</strong> ${c.deadline || 'N/A'} · <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}</p>
+        <p class="meta">
+  <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
+  <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
+  <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
+  <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
+</p>
+
           <p>${c.description || ''}</p>
           <svg class="heart ${isFav ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite">
             <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
