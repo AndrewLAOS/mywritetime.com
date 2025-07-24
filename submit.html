@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Competition Suggestion – Write Time</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#f8f9fa;--card:#fff;--accent:#007bff;--text:#212529;
+      --text-light:#6c757d;--border:#ced4da;--header-bg:#fff;
+      --header-text:#212529;--card-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--text);
+      max-width:700px;margin:2rem auto;padding:0 1.5rem}
+    /* navbar */
+    .navbar{background:var(--header-bg);box-shadow:var(--card-shadow);
+      padding:1rem 2rem;display:flex;gap:2rem;justify-content:center;
+      margin-bottom:2rem}
+    .nav-link{color:var(--header-text);font-weight:600;text-decoration:none;
+      padding-bottom:3px;border-bottom:3px solid transparent;transition:.3s}
+    .nav-link:hover,.nav-link.active{color:var(--accent);border-bottom-color:var(--accent)}
+    /* content */
+    h1{font-family:"Playfair Display",serif;font-size:2.5rem;margin-bottom:1.5rem;text-align:center}
+    form{background:var(--card);padding:2rem;border-radius:12px;box-shadow:var(--card-shadow)}
+    label{display:block;margin-bottom:.5rem;font-weight:600;color:var(--text-light)}
+    input,select,textarea{width:100%;padding:.6rem;margin-bottom:1.5rem;border:1px solid var(--border);
+      border-radius:6px;font:1rem Poppins,sans-serif;color:var(--text)}
+    textarea{min-height:100px;resize:vertical}
+    button{background:var(--accent);color:#fff;border:none;padding:.8rem 1.5rem;
+      border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:.3s}
+    button:hover{background:#0056b3}
+    #message{margin-top:1rem;font-weight:600;text-align:center}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+  <a href="index.html" class="nav-link" id="nav-home">Home</a>
+  <a href="submit.html" class="nav-link" id="nav-submit">Submit Competition</a>
+  <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
+</nav>
+
+
+  <h1>Submit a Competition Suggestion</h1>
+
+  <!-- Suggestion Form -->
+  <form id="suggestionForm">
+    <label>Competition Name *<input id="name" required /></label>
+    <label>Competition URL *<input id="url" type="url" required placeholder="https://example.com" /></label>
+
+    <label>Genre *
+      <select id="genre" required>
+        <option value="">Select a genre</option>
+        <option>Fiction</option><option>Poetry</option><option>Short Story</option>
+        <option>Flash Fiction</option><option>Essay</option><option>Screenwriting</option>
+        <option>Nonfiction</option><option>Humor</option><option>Cartoons</option>
+        <option>Novel</option><option>Scriptwriting</option>
+      </select>
+    </label>
+
+    <label>Word Count<input id="wordCount" placeholder="e.g. <500, 1000‑2000, Booklength" /></label>
+    <label>Poetry Lines<input id="lines" placeholder="e.g. <20, 20‑40, >40" /></label>
+    <label>Entry Fee ($)<input id="fee" type="number" min="0" step=".01" placeholder="0 for free" /></label>
+    <label>Prize ($)<input id="prize" type="number" min="0" step="1" /></label>
+    <label>Eligibility<input id="eligibility" placeholder="e.g. Middle School, Women writers" /></label>
+    <label>Deadline<input id="deadline" type="date" /></label>
+    <label>Description<textarea id="description" placeholder="Additional details"></textarea></label>
+
+    <button type="submit">Submit Suggestion</button>
+  </form>
+
+  <div id="message"></div>
+
+  <!-- Firebase + Firestore -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // Your Firebase project credentials
+    const firebaseConfig = {
+      apiKey: "AIzaSyCR7DTRf_MJx0BDszzebJzMs0sz4aa1rec",
+      authDomain: "write-time1.firebaseapp.com",
+      projectId: "write-time1",
+      storageBucket: "write-time1.appspot.com",
+      messagingSenderId: "536245234642",
+      appId: "1:536245234642:web:80a4213d084f4d8686360b"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    const $ = id => document.getElementById(id);
+    const form = $('suggestionForm');
+    const msg  = $('message');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+
+      const data = {
+        name: $('name').value.trim(),
+        url: $('url').value.trim(),
+        genre: $('genre').value,
+        wordcount: $('wordCount').value.trim() || null,
+        lines: $('lines').value.trim() || null,
+        fee: $('fee').value ? parseFloat($('fee').value) : 0,
+        prize: $('prize').value ? parseInt($('prize').value) : null,
+        eligibility: $('eligibility').value.trim() || null,
+        deadline: $('deadline').value || null,
+        description: $('description').value.trim() || null,
+        status: "pending",
+        createdAt: serverTimestamp()
+      };
+
+      try {
+        await addDoc(collection(db, "suggestions"), data);
+        msg.textContent = "✅ Thank you! Your suggestion is pending review.";
+        msg.style.color = "green";
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "❌ Error submitting suggestion. Please try again.";
+        msg.style.color = "red";
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Highlight active nav link
+    const current = 'nav-submit';
+    document.getElementById(current).classList.add('active');
+  </script>
+</body>
+</html>
