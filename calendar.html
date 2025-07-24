@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calendar – Write Time</title>
+  <meta name="description" content="Writing contest calendar with deadlines and links.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: var(--bg, #f8f9fa);
+      color: var(--text, #212529);
+      transition: .3s;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: var(--header-bg, #e0e6ed);
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+    .nav-link {
+      text-decoration: none;
+      color: var(--header-text, #343a40);
+      font-weight: 600;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent, #007bff);
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin: 2rem 0 1rem;
+    }
+    #calendar {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .9rem;
+      color: #888;
+    }
+    [data-theme="dark"] {
+      --bg: #1a202c;
+      --text: #e2e8f0;
+      --accent: #63b3ed;
+      --header-bg: #2a3341;
+      --header-text: #e2e8f0;
+    }
+    [data-theme="dark"] #calendar {
+      background: #2d3748;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body data-theme="light">
+ <nav class="navbar">
+  <a href="index.html" class="nav-link" id="nav-home">Home</a>
+  <a href="submit.html" class="nav-link" id="nav-submit">Submit Competition</a>
+  <a href="calendar.html" class="nav-link" id="nav-calendar">Calendar</a>
+  <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
+</nav>
+
+  <h1>Competition Calendar</h1>
+  <div id="calendar"></div>
+
+  <footer>© 2025 Write Time. All rights reserved.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.js"></script>
+  <script>
+    document.body.dataset.theme = localStorage.getItem('theme') || 'light';
+
+    fetch('competitions.json')
+      .then(res => res.json())
+      .then(data => {
+        const events = data
+          .filter(c => c.deadline)
+          .map(c => ({
+            title: c.name,
+            date: c.deadline,
+            url: c.url
+          }));
+document.getElementById('nav-calendar').classList.add('active');
+
+        const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+          initialView: 'dayGridMonth',
+          height: "auto",
+          events,
+          eventClick: function(info) {
+            info.jsEvent.preventDefault(); // prevent default
+            if (info.event.url) {
+              window.open(info.event.url, '_blank');
+            }
+          },
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,listWeek'
+          },
+          themeSystem: 'standard'
+        });
+
+        calendar.render();
+      })
+      .catch(err => {
+        document.getElementById('calendar').innerHTML = `<p style="color:red;text-align:center;">⚠️ Could not load competitions.json</p>`;
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
