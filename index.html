@@ -92,6 +92,22 @@
     }
     .filters select:focus, .filters input:focus { border-color: var(--accent); }
 
+    #recommended {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+    }
+    #recommended h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    #recommended-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 1.5rem;
+    }
+
     #results {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem; padding: 2.5rem; max-width: 1200px; margin: 0 auto; flex-grow: 1;
@@ -119,7 +135,7 @@
     @media(max-width:768px){
       header { padding: 1.5rem 1rem; } header h1 { font-size: 2.2rem; }
       .filters { padding: 1rem; flex-direction: column; align-items: center; }
-      #results { padding: 1.5rem; grid-template-columns: 1fr; }
+      #recommended-results, #results { padding: 1.5rem; grid-template-columns: 1fr; }
       .card { padding: 1.5rem; }
     }
   </style>
@@ -188,6 +204,11 @@
     </label>
   </form>
 
+  <section id="recommended">
+    <h2>Recommended Competitions</h2>
+    <div id="recommended-results"></div>
+  </section>
+
   <main id="results"></main>
   <footer>© 2025 Write Time. All rights reserved.</footer>
 
@@ -222,6 +243,38 @@
 
     let competitions = [];
 
+    function renderCard(c) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
+        <p class="meta">
+          <strong>Genre:</strong> ${c.genre} · 
+          <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · 
+          <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}
+        </p>
+        <p class="meta">
+          <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
+          <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
+          <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
+          <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
+        </p>
+        <p>${c.description || ''}</p>
+        <svg class="heart ${favSet.has(c.name) ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
+          <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
+        </svg>
+      `;
+      // Heart toggle
+      const heart = card.querySelector('.heart');
+      heart.onclick = () => {
+        if (favSet.has(c.name)) { favSet.delete(c.name); }
+        else { favSet.add(c.name); }
+        localStorage.setItem('favs', JSON.stringify([...favSet]));
+        heart.classList.toggle('fav');
+      };
+      return card;
+    }
+
     function render(arr) {
       results.innerHTML = '';
       if (!arr.length) {
@@ -229,29 +282,7 @@
         return;
       }
       arr.forEach(c => {
-        const isFav = favSet.has(c.name);
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <h3><a href="${c.url}" target="_blank">${c.name}</a></h3>
-          <p class="meta"><strong>Genre:</strong> ${c.genre} · <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}</p>
-        <p class="meta">
-  <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
-  <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
-  <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
-  <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
-</p>
-
-          <p>${c.description || ''}</p>
-          <svg class="heart ${isFav ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite">
-            <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
-          </svg>`;
-        card.querySelector('.heart').onclick = () => {
-          if (isFav) { favSet.delete(c.name); } else { favSet.add(c.name); }
-          localStorage.setItem('favs', JSON.stringify([...favSet]));
-          card.querySelector('.heart').classList.toggle('fav');
-        };
-        results.appendChild(card);
+        results.appendChild(renderCard(c));
       });
     }
 
@@ -286,14 +317,23 @@
       render(filtered);
     }
 
-    searchInput.addEventListener('input', applyFilters);
-    filterForm.addEventListener('change', applyFilters);
-    document.getElementById('nav-home').classList.add('active');
-
     fetch('competitions.json')
       .then(res => res.json())
       .then(data => {
         competitions = data;
+
+        // Recommended section
+        const recommended = competitions.filter(c => c.recommended);
+        const recommendedContainer = document.getElementById('recommended-results');
+        recommendedContainer.innerHTML = '';
+        if (recommended.length === 0) {
+          recommendedContainer.innerHTML = '<p style="opacity: 0.7; font-style: italic;">No recommended competitions at the moment.</p>';
+        } else {
+          recommended.forEach(c => {
+            recommendedContainer.appendChild(renderCard(c));
+          });
+        }
+
         applyFilters();
       })
       .catch(err => {
@@ -304,6 +344,11 @@
           </p>`;
         console.error(err);
       });
+
+    // Filter and search event listeners
+    searchInput.addEventListener('input', applyFilters);
+    filterForm.addEventListener('change', applyFilters);
+
   </script>
 </body>
 </html>

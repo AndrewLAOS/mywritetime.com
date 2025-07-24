@@ -9,7 +9,8 @@
     "prize": 1000,
     "eligibility": "Amateur writers of science fiction & fantasy",
     "deadline": "2025-09-30",
-    "description": "Quarterly contest for new and aspiring science fiction and fantasy writers."
+    "description": "Quarterly contest for new and aspiring science fiction and fantasy writers.",
+  "recommended": false
   },
   {
     "name": "The Poetry Society - National Poetry Competition",
@@ -21,7 +22,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2025-10-31",
-    "description": "One of the world's most prestigious poetry competitions."
+    "description": "One of the world's most prestigious poetry competitions.",
+"recommended": false
   },
   {
     "name": "ServiceScape Short Story Award",
@@ -33,7 +35,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2025-11-29",
-    "description": "Annual short story award open to all writers."
+    "description": "Annual short story award open to all writers.",
+  "recommended": false
   },
   {
     "name": "Flash Fiction Magazine Contest",
@@ -45,7 +48,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2025-12-15",
-    "description": "Monthly contest for compelling flash fiction."
+    "description": "Monthly contest for compelling flash fiction.",
+"recommended": false
   },
   {
     "name": "Granta Magazine - New Voices",
@@ -57,7 +61,8 @@
     "prize": null,
     "eligibility": "Emerging authors",
     "deadline": "2026-01-31",
-    "description": "Granta seeks new and exciting literary talent for publication."
+    "description": "Granta seeks new and exciting literary talent for publication.",
+  "recommended": false
   },
   {
     "name": "The Masters Review - Short Story Award for New Writers",
@@ -69,7 +74,8 @@
     "prize": 3000,
     "eligibility": "Emerging authors (not published a novel)",
     "deadline": "2026-02-28",
-    "description": "Supports emerging writers with a significant prize and publication."
+    "description": "Supports emerging writers with a significant prize and publication.",
+ "recommended": false
   },
   {
     "name": "Caledonia Novel Award",
@@ -81,7 +87,8 @@
     "prize": 1500,
     "eligibility": "First novelists",
     "deadline": "2026-03-15",
-    "description": "International award for unpublished and self-published novelists."
+    "description": "International award for unpublished and self-published novelists.",
+  "recommended": false
   },
   {
     "name": "The Moth Poetry Prize",
@@ -93,7 +100,8 @@
     "prize": 6000,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "An internationally renowned prize for a single unpublished poem."
+    "description": "An internationally renowned prize for a single unpublished poem.",
+  "recommended": false
   },
   {
     "name": "Creative Nonfiction Magazine - Various Contests",
@@ -105,7 +113,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2025-12-01",
-    "description": "Ongoing themed contests for creative nonfiction."
+    "description": "Ongoing themed contests for creative nonfiction.",
+  "recommended": false
   },
   {
     "name": "ScreenCraft - various Screenwriting contests",
@@ -117,7 +126,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Multiple contests for various screenwriting categories (Film, TV, Short, etc.)."
+    "description": "Multiple contests for various screenwriting categories (Film, TV, Short, etc.).",
+ "recommended": false
   },
   {
     "name": "The Bath Flash Fiction Award",
@@ -129,7 +139,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2025-10-27",
-    "description": "Quarterly international flash fiction competition."
+    "description": "Quarterly international flash fiction competition.",
+ "recommended": false
   },
   {
     "name": "Narrative Magazine - Story Contest",
@@ -141,7 +152,8 @@
     "prize": 2500,
     "eligibility": "All Ages",
     "deadline": "2026-05-31",
-    "description": "Annual contest for short stories, novel excerpts, and memoirs."
+    "description": "Annual contest for short stories, novel excerpts, and memoirs.",
+  "recommended": false
   },
   {
     "name": "New Ohio Review - Fiction Contest",
@@ -153,7 +165,8 @@
     "prize": 1500,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual contest for outstanding fiction."
+    "description": "Annual contest for outstanding fiction.",
+ "recommended": false
   },
   {
     "name": "Nimrod International Journal - Literary Awards",
@@ -165,7 +178,8 @@
     "prize": 2000,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "Awards for both poetry and fiction."
+    "description": "Awards for both poetry and fiction.",
+ "recommended": false
   },
   {
     "name": "The Rialto Poetry Competition",
@@ -177,7 +191,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-02-28",
-    "description": "Biennial competition for individual poems."
+    "description": "Biennial competition for individual poems.",
+  "recommended": false
   },
   {
     "name": "Bridport Prize - Short Story",
@@ -189,7 +204,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2025-10-31",
-    "description": "Annual international competition for short stories."
+    "description": "Annual international competition for short stories.",
+  "recommended": false
   },
   {
     "name": "Screencraft - Feature Film Competition",
@@ -201,7 +217,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Annual contest for feature-length screenplays across all genres."
+    "description": "Annual contest for feature-length screenplays across all genres.",
+  "recommended": false
   },
   {
     "name": "The Presidio Prize",
@@ -213,7 +230,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2026-01-15",
-    "description": "Recognizes writing that illuminates the military experience."
+    "description": "Recognizes writing that illuminates the military experience.",
+ "recommended": false
   },
   {
     "name": "Mslexia - Women's Poetry & Short Story Competition",
@@ -225,7 +243,8 @@
     "prize": 2000,
     "eligibility": "Women writers",
     "deadline": "2025-09-23",
-    "description": "Annual competitions for women writers in poetry and short story."
+    "description": "Annual competitions for women writers in poetry and short story.",
+ "recommended": false
   },
   {
     "name": "Fractured Lit - Microfiction Prize",
@@ -237,7 +256,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-02-15",
-    "description": "Focuses on compelling microfiction."
+    "description": "Focuses on compelling microfiction.",
+  "recommended": false
   },
   {
     "name": "The Writers' Union of Canada - Short Prose Competition",
@@ -249,7 +269,8 @@
     "prize": 2500,
     "eligibility": "Canadian citizens/permanent residents, unpublished",
     "deadline": "2025-11-01",
-    "description": "Annual competition for emerging Canadian writers of short prose."
+    "description": "Annual competition for emerging Canadian writers of short prose.",
+ "recommended": false
   },
   {
     "name": "CBC Literary Prizes - Poetry",
@@ -261,7 +282,8 @@
     "prize": 6000,
     "eligibility": "Canadian citizens/permanent residents",
     "deadline": "2025-10-31",
-    "description": "One of Canada's most prestigious literary awards for original, unpublished poems."
+    "description": "One of Canada's most prestigious literary awards for original, unpublished poems.",
+ "recommended": false
   },
   {
     "name": "Atlanta Review - International Poetry Competition",
@@ -273,7 +295,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Annual competition for poems, open to international submissions."
+    "description": "Annual competition for poems, open to international submissions.",
+ "recommended": false
   },
   {
     "name": "The Iowa Review Awards - Fiction",
@@ -285,7 +308,8 @@
     "prize": 1500,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual awards in fiction, poetry, and nonfiction."
+    "description": "Annual awards in fiction, poetry, and nonfiction.",
+ "recommended": false
   },
   {
     "name": "Glimmer Train Press - Short Story Award for New Writers",
@@ -297,7 +321,8 @@
     "prize": 2500,
     "eligibility": "Emerging authors (less than 2 stories published in national mags)",
     "deadline": "2026-04-01",
-    "description": "Ongoing short story award cycles for new writers."
+    "description": "Ongoing short story award cycles for new writers.",
+  "recommended": false
   },
   {
     "name": "The Great American Think-Off Essay Contest",
@@ -309,7 +334,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2026-04-01",
-    "description": "Annual essay contest based on a philosophical question."
+    "description": "Annual essay contest based on a philosophical question.",
+ "recommended": false
   },
   {
     "name": "The Berlin Writing Prize",
@@ -321,7 +347,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-05-01",
-    "description": "International short story prize run by The Circus."
+    "description": "International short story prize run by The Circus.",
+  "recommended": false
   },
   {
     "name": "The Manchester Writing Competition - Fiction Prize",
@@ -333,7 +360,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2025-10-31",
-    "description": "One of the world’s most generous literary awards for short fiction."
+    "description": "One of the world’s most generous literary awards for short fiction.",
+ "recommended": false
   },
   {
     "name": "The Manchester Writing Competition - Poetry Prize",
@@ -345,7 +373,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2025-10-31",
-    "description": "One of the world’s most generous literary awards for a portfolio of poems."
+    "description": "One of the world’s most generous literary awards for a portfolio of poems.",
+ "recommended": false
   },
   {
     "name": "The Narrative Nonfiction Prize",
@@ -357,7 +386,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2026-06-30",
-    "description": "An annual prize celebrating the art of narrative nonfiction."
+    "description": "An annual prize celebrating the art of narrative nonfiction.",
+ "recommended": false
   },
   {
     "name": "Faber Children's Fiction Competition",
@@ -369,7 +399,8 @@
     "prize": 1000,
     "eligibility": "Unpublished children's novelists",
     "deadline": "2026-07-31",
-    "description": "Seeks outstanding new voices in children's fiction."
+    "description": "Seeks outstanding new voices in children's fiction.",
+  "recommended": false
   },
   {
     "name": "The Alpine Fellowship Writing Prize",
@@ -381,7 +412,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2026-03-01",
-    "description": "Annual writing prize on a philosophical theme."
+    "description": "Annual writing prize on a philosophical theme.",
+ "recommended": false
   },
   {
     "name": "Poetry London Prize",
@@ -393,7 +425,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2025-11-15",
-    "description": "A major international prize for a single poem."
+    "description": "A major international prize for a single poem.",
+ "recommended": false
   },
   {
     "name": "The Writers Bureau - Short Story Competition",
@@ -405,7 +438,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual short story contest for new and experienced writers."
+    "description": "Annual short story contest for new and experienced writers.",
+ "recommended": false
   },
   {
     "name": "Screenwriters' Fellowship",
@@ -417,7 +451,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2026-05-01",
-    "description": "Part of the Austin Film Festival, supporting emerging screenwriters."
+    "description": "Part of the Austin Film Festival, supporting emerging screenwriters.",
+  "recommended": false
   },
   {
     "name": "Columbia Journal - Spring Contest",
@@ -429,7 +464,8 @@
     "prize": 1500,
     "eligibility": "All Ages",
     "deadline": "2026-03-01",
-    "description": "Annual contest for fiction, poetry, and nonfiction."
+    "description": "Annual contest for fiction, poetry, and nonfiction.",
+ "recommended": false
   },
   {
     "name": "The Plough Prize",
@@ -441,7 +477,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "International poetry competition for individual poems."
+    "description": "International poetry competition for individual poems.",
+ "recommended": false
   },
   {
     "name": "The White Review - Short Story Prize",
@@ -453,7 +490,8 @@
     "prize": 2500,
     "eligibility": "UK & Ireland residents, unpublished",
     "deadline": "2025-10-01",
-    "description": "Annual prize for a single short story by a writer aged 18 or over."
+    "description": "Annual prize for a single short story by a writer aged 18 or over.",
+"recommended": false
   },
   {
     "name": "Zoetrope: All-Story Short Fiction Competition",
@@ -465,7 +503,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-02-01",
-    "description": "Quarterly short fiction contest, judged by a guest editor."
+    "description": "Quarterly short fiction contest, judged by a guest editor.",
+  "recommended": false
   },
   {
     "name": "The Raymond Carver Short Story Contest",
@@ -477,7 +516,8 @@
     "prize": 2000,
     "eligibility": "All Ages",
     "deadline": "2025-11-01",
-    "description": "Honors the legacy of Raymond Carver with a focus on realism and brevity."
+    "description": "Honors the legacy of Raymond Carver with a focus on realism and brevity.",
+ "recommended": false
   },
   {
     "name": "Inkitt - Novel Contest",
@@ -489,7 +529,8 @@
     "prize": null,
     "eligibility": "All Ages",
     "deadline": "2025-12-31",
-    "description": "Ongoing contests for novels in various genres, often leading to publishing deals."
+    "description": "Ongoing contests for novels in various genres, often leading to publishing deals.",
+ "recommended": false
   },
   {
     "name": "The Poetry Box Chapbook Prize",
@@ -501,7 +542,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Annual competition for poetry chapbooks."
+    "description": "Annual competition for poetry chapbooks.",
+  "recommended": false
   },
   {
     "name": "The Academy of American Poets - James Laughlin Award",
@@ -513,7 +555,8 @@
     "prize": 5000,
     "eligibility": "U.S. citizens/residents with first book of poetry",
     "deadline": "2025-09-30",
-    "description": "Honors an outstanding second book of poetry by an American poet."
+    "description": "Honors an outstanding second book of poetry by an American poet.",
+  "recommended": false
   },
   {
     "name": "The New Yorker - Cartoon Caption Contest",
@@ -525,7 +568,8 @@
     "prize": null,
     "eligibility": "All Ages",
     "deadline": "Weekly",
-    "description": "Weekly contest to write a humorous caption for a New Yorker cartoon."
+    "description": "Weekly contest to write a humorous caption for a New Yorker cartoon.",
+ "recommended": false
   },
   {
     "name": "National Book Foundation - 5 Under 35",
@@ -537,7 +581,8 @@
     "prize": 1000,
     "eligibility": "Writers under 35 with first book of fiction",
     "deadline": "2025-08-01",
-    "description": "Recognizes five debut fiction writers under the age of 35."
+    "description": "Recognizes five debut fiction writers under the age of 35.",
+ "recommended": false
   },
   {
     "name": "The Best Small Fictions",
@@ -549,7 +594,8 @@
     "prize": null,
     "eligibility": "Previously published small fictions",
     "deadline": "2026-01-31",
-    "description": "Annual anthology seeking the best short fiction published online or in print."
+    "description": "Annual anthology seeking the best short fiction published online or in print.",
+ "recommended": false
   },
   {
     "name": "American Short Fiction - Short Story Contest",
@@ -561,7 +607,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-08-31",
-    "description": "Bi-annual contest for original, unpublished short stories."
+    "description": "Bi-annual contest for original, unpublished short stories.",
+  "recommended": false
   },
   {
     "name": "The Nimrod Literary Awards - Katherine Anne Porter Prize for Fiction",
@@ -573,9 +620,10 @@
     "prize": 2000,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "Annual prize for an outstanding work of fiction."
+    "description": "Annual prize for an outstanding work of fiction.",
+ "recommended": false
   },
-  {
+    {
     "name": "The Nimrod Literary Awards - Pablo Neruda Prize for Poetry",
     "url": "https://nimrod.utulsa.edu/contests/",
     "genre": "Poetry",
@@ -585,7 +633,8 @@
     "prize": 2000,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "Annual prize for an outstanding collection of poems."
+    "description": "Annual prize for an outstanding collection of poems.",
+  "recommended": false
   },
   {
     "name": "The Restless Books Prize for New Immigrant Writing - Fiction",
@@ -597,7 +646,8 @@
     "prize": 10000,
     "eligibility": "First-generation immigrants",
     "deadline": "2026-09-30",
-    "description": "Awards exceptional literary works by first-generation immigrants."
+    "description": "Awards exceptional literary works by first-generation immigrants.",
+  "recommended": false
   },
   {
     "name": "The Restless Books Prize for New Immigrant Writing - Nonfiction",
@@ -609,7 +659,8 @@
     "prize": 10000,
     "eligibility": "First-generation immigrants",
     "deadline": "2026-09-30",
-    "description": "Awards exceptional literary works by first-generation immigrants."
+    "description": "Awards exceptional literary works by first-generation immigrants.",
+ "recommended": false
   },
   {
     "name": "Button Poetry - Chapbook Contest",
@@ -621,7 +672,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2025-11-01",
-    "description": "Seeks chapbook-length poetry manuscripts."
+    "description": "Seeks chapbook-length poetry manuscripts.",
+  "recommended": false
   },
   {
     "name": "Write Michigan Short Story Contest",
@@ -633,7 +685,8 @@
     "prize": 500,
     "eligibility": "Michigan residents",
     "deadline": "2025-12-01",
-    "description": "Annual short story contest for Michigan residents."
+    "description": "Annual short story contest for Michigan residents.",
+ "recommended": false
   },
   {
     "name": "The Writers' Trust of Canada - Atwood Gibson Writers' Trust Fiction Prize",
@@ -645,7 +698,7 @@
     "prize": 60000,
     "eligibility": "Canadian citizens/permanent residents",
     "deadline": "2025-08-15",
-    "description": "Major Canadian literary prize for a novel or short story collection."
+ "recommended": false
   },
   {
     "name": "The Narrative Prize",
@@ -657,7 +710,8 @@
     "prize": 4000,
     "eligibility": "All Ages",
     "deadline": "2026-05-31",
-    "description": "Annual prize for the best work of fiction, nonfiction, or poetry published in Narrative."
+    "description": "Annual prize for the best work of fiction, nonfiction, or poetry published in Narrative.",
+ "recommended": false
   },
   {
     "name": "The Boulevard Emerging Poets Contest",
@@ -669,7 +723,8 @@
     "prize": 1000,
     "eligibility": "Poets unpublished in a national print magazine",
     "deadline": "2026-04-30",
-    "description": "Annual contest for emerging poets."
+    "description": "Annual contest for emerging poets.",
+ "recommended": false
   },
   {
     "name": "The Writers' Room of Boston - Emerging Writer Fellowship",
@@ -681,7 +736,8 @@
     "prize": null,
     "eligibility": "Emerging writers in Greater Boston",
     "deadline": "2026-03-01",
-    "description": "Provides free writing space and mentorship to emerging writers."
+    "description": "Provides free writing space and mentorship to emerging writers.",
+ "recommended": false
   },
   {
     "name": "Arcadia's Short Story Contest",
@@ -693,7 +749,8 @@
     "prize": 200,
     "eligibility": "All Ages",
     "deadline": "2025-11-30",
-    "description": "Annual contest seeking stories inspired by local history or folklore."
+    "description": "Annual contest seeking stories inspired by local history or folklore.",
+  "recommended": false
   },
   {
     "name": "The Poetry Business - International Poetry Book & Pamphlet Competition",
@@ -705,7 +762,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-02-28",
-    "description": "Annual competition for poetry pamphlets and full-length collections."
+    "description": "Annual competition for poetry pamphlets and full-length collections.",
+  "recommended": false
   },
   {
     "name": "The New Rivers Press Many Voices Project",
@@ -717,7 +775,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Seeks book-length manuscripts of fiction and poetry from emerging and established writers."
+    "description": "Seeks book-length manuscripts of fiction and poetry from emerging and established writers.",
+ "recommended": false
   },
   {
     "name": "The Lascaux Prize in Flash Fiction",
@@ -729,7 +788,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-06-30",
-    "description": "Annual prize for a single work of flash fiction."
+    "description": "Annual prize for a single work of flash fiction.",
+ "recommended": false
   },
   {
     "name": "The Masters Review - Novel Excerpt Contest",
@@ -741,7 +801,8 @@
     "prize": 3000,
     "eligibility": "Emerging authors (not published a novel)",
     "deadline": "2026-07-31",
-    "description": "Open to novel excerpts from emerging and established writers."
+    "description": "Open to novel excerpts from emerging and established writers.",
+"recommended": false
   },
   {
     "name": "The PEN/Faulkner Award for Fiction",
@@ -753,7 +814,8 @@
     "prize": 15000,
     "eligibility": "U.S. citizens/permanent residents, published work",
     "deadline": "2025-10-31",
-    "description": "National award recognizing the best work of American fiction published in the preceding year."
+    "description": "National award recognizing the best work of American fiction published in the preceding year.",
+ "recommended": false
   },
   {
     "name": "The Ruth Stone Poetry Prize",
@@ -765,7 +827,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual prize for a single poem."
+    "description": "Annual prize for a single poem.",
+ "recommended": false
   },
   {
     "name": "The Iowa Short Fiction Award & John Simmons Short Fiction Award",
@@ -777,7 +840,8 @@
     "prize": null,
     "eligibility": "All Ages",
     "deadline": "2025-09-30",
-    "description": "For first collections of short fiction."
+    "description": "For first collections of short fiction.",
+  "recommended": false
   },
   {
     "name": "The William Faulkner - William Wisdom Creative Writing Competition",
@@ -789,7 +853,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Offers categories for novel, novella, short story, poetry, and more."
+    "description": "Offers categories for novel, novella, short story, poetry, and more.",
+ "recommended": false
   },
   {
     "name": "The International Writers' Collective - Short Story Prize",
@@ -801,7 +866,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "Annual international short story prize."
+    "description": "Annual international short story prize.",
+ "recommended": false
   },
   {
     "name": "Write Bloody Publishing - Book Contest",
@@ -813,7 +879,8 @@
     "prize": null,
     "eligibility": "All Ages",
     "deadline": "2025-10-01",
-    "description": "Seeks full-length poetry manuscripts."
+    "description": "Seeks full-length poetry manuscripts.",
+ "recommended": false
   },
   {
     "name": "The Poetry Foundation - Pegasus Award for Poetry Criticism",
@@ -825,7 +892,8 @@
     "prize": 50000,
     "eligibility": "Published book of criticism",
     "deadline": "2025-09-30",
-    "description": "Honors an outstanding book-length work of poetry criticism."
+    "description": "Honors an outstanding book-length work of poetry criticism.",
+ "recommended": false
   },
   {
     "name": "The Cincinnati Review - Robert and Adele Schiff Awards",
@@ -837,7 +905,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Annual contests for fiction and poetry."
+    "description": "Annual contests for fiction and poetry.",
+ "recommended": false
   },
   {
     "name": "The Rattle Poetry Prize",
@@ -849,7 +918,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2026-07-15",
-    "description": "Annual prize for a single poem, with a substantial prize."
+    "description": "Annual prize for a single poem, with a substantial prize.",
+ "recommended": false
   },
   {
     "name": "The Writers Bureau - Poetry Competition",
@@ -861,7 +931,8 @@
     "prize": 500,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual poetry contest for new and experienced writers."
+    "description": "Annual poetry contest for new and experienced writers.",
+ "recommended": false
   },
   {
     "name": "The Page International Screenwriting Awards",
@@ -873,7 +944,8 @@
     "prize": 25000,
     "eligibility": "All Ages",
     "deadline": "2026-04-30",
-    "description": "One of the industry's most respected screenwriting competitions."
+    "description": "One of the industry's most respected screenwriting competitions.",
+ "recommended": false
   },
   {
     "name": "The Malahat Review - Far Horizons Award for Short Fiction",
@@ -885,7 +957,8 @@
     "prize": 1000,
     "eligibility": "Canadian citizens/permanent residents, unpublished",
     "deadline": "2025-10-31",
-    "description": "Biennial contest for an emerging Canadian writer's short fiction."
+    "description": "Biennial contest for an emerging Canadian writer's short fiction.",
+ "recommended": false
   },
   {
     "name": "The Malahat Review - Open Season Awards (Poetry, Fiction, CNF)",
@@ -897,7 +970,8 @@
     "prize": 2000,
     "eligibility": "All Ages",
     "deadline": "2026-01-31",
-    "description": "Annual awards for poetry, fiction, and creative nonfiction."
+    "description": "Annual awards for poetry, fiction, and creative nonfiction.",
+ "recommended": false
   },
   {
     "name": "The Commonwealth Short Story Prize",
@@ -909,7 +983,8 @@
     "prize": 5000,
     "eligibility": "Citizens of Commonwealth countries",
     "deadline": "2025-11-01",
-    "description": "Annual award for the best piece of unpublished short fiction from the Commonwealth."
+    "description": "Annual award for the best piece of unpublished short fiction from the Commonwealth.",
+  "recommended": false
   },
   {
     "name": "The Kenyon Review Short Fiction Contest",
@@ -921,7 +996,8 @@
     "prize": 4000,
     "eligibility": "All Ages",
     "deadline": "2026-03-31",
-    "description": "Annual contest for short fiction, judged by a distinguished writer."
+    "description": "Annual contest for short fiction, judged by a distinguished writer.",
+ "recommended": false
   },
   {
     "name": "The Vassar Review - Annual Prize",
@@ -933,7 +1009,8 @@
     "prize": 500,
     "eligibility": "College students",
     "deadline": "2026-02-15",
-    "description": "Annual contest for prose and poetry from college students."
+    "description": "Annual contest for prose and poetry from college students.",
+ "recommended": false
   },
   {
     "name": "The Writer's Digest Annual Writing Competition",
@@ -945,7 +1022,8 @@
     "prize": 5000,
     "eligibility": "All Ages",
     "deadline": "2025-10-01",
-    "description": "One of the most popular writing competitions in the country, with multiple categories."
+    "description": "One of the most popular writing competitions in the country, with multiple categories.",
+ "recommended": false
   },
   {
     "name": "The Poetry Box - Anthology Submission",
@@ -957,7 +1035,8 @@
     "prize": null,
     "eligibility": "All Ages",
     "deadline": "2025-12-31",
-    "description": "Open calls for themed poetry anthologies."
+    "description": "Open calls for themed poetry anthologies.",
+ "recommended": false
   },
   {
     "name": "The Black Warrior Review - Annual Literary Awards",
@@ -969,7 +1048,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2026-03-01",
-    "description": "Awards in fiction, poetry, and nonfiction."
+    "description": "Awards in fiction, poetry, and nonfiction.",
+ "recommended": false
   },
   {
     "name": "The Alpine Fellowship - Theatre Prize",
@@ -981,7 +1061,8 @@
     "prize": 10000,
     "eligibility": "All Ages",
     "deadline": "2026-03-01",
-    "description": "Annual prize for a play that addresses a philosophical theme."
+    "description": "Annual prize for a play that addresses a philosophical theme.",
+ "recommended": false
   },
   {
     "name": "The Writers' Trust of Canada - Hilary Weston Writers' Trust Prize for Nonfiction",
@@ -993,7 +1074,8 @@
     "prize": 60000,
     "eligibility": "Canadian citizens/permanent residents, published work",
     "deadline": "2025-08-15",
-    "description": "Canada's richest literary award for nonfiction."
+    "description": "Canada's richest literary award for nonfiction.",
+  "recommended": false
   },
   {
     "name": "The New Millennium Writing Awards",
@@ -1005,7 +1087,8 @@
     "prize": 1000,
     "eligibility": "All Ages",
     "deadline": "2025-11-30",
-    "description": "Bi-annual contest for fiction, poetry, and nonfiction."
+    "description": "Bi-annual contest for fiction, poetry, and nonfiction.",
+ "recommended": false
   },
   {
     "name": "The National Children's Storywriting Competition",
@@ -1017,6 +1100,7 @@
     "prize": null,
     "eligibility": "Ages 5-13",
     "deadline": "2026-05-01",
-    "description": "Annual competition for young writers in the UK."
+    "description": "Annual competition for young writers in the UK.",
+ "recommended": false
   }
 ]
