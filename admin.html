@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '6f57c9bf7ea10a4a6cfc8218ac1cca1c' });
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KV4M6Y3CY"></script>
 <script>
@@ -327,4 +333,13 @@
     document.getElementById('nav-admin').classList.add('active');
   </script>
 </body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KV4M6Y3CY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KV4M6Y3CY');
+</script>
 </html>
