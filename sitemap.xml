@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://mywritetime.com/</loc>
     <lastmod>2025-07-25</lastmod>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/index.html</loc>
+    <loc>https://mywritetime.com/index.html</loc>
     <lastmod>2025-07-25</lastmod>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/submit.html</loc>
+    <loc>https://mywritetime.com/submit.html</loc>
     <lastmod>2025-07-25</lastmod>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/admin.html</loc>
+    <loc>https://mywritetime.com/admin.html</loc>
     <lastmod>2025-07-25</lastmod>
     <priority>0.60</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/competitions.json</loc>
+    <loc>https://mywritetime.com/competitions.json</loc>
     <lastmod>2025-07-25</lastmod>
     <priority>0.40</priority>
   </url>
