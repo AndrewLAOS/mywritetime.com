@@ -204,14 +204,13 @@
 
     const firebaseConfig = {
       apiKey: "AIzaSyCR7DTRf_MJx0BDszzebJzMs0sz4aa1rec",
-      authDomain: "write-time1.firebaseapp.com",
-      projectId: "write-time1",
-      storageBucket: "write-time1.appspot.com",
-      messagingSenderId: "536245234642",
-      appId: "1:536245234642:web:80a4213d084f4d8686360b",
-      measurementId: "G-0K34FCY36K"
-    };
-
+  authDomain: "write-time1.firebaseapp.com",
+  projectId: "write-time1",
+  storageBucket: "write-time1.firebasestorage.app",
+  messagingSenderId: "536245234642",
+  appId: "1:536245234642:web:80a4213d084f4d8686360b",
+  measurementId: "G-0K34FCY36K"
+};
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);

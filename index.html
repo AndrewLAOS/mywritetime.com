@@ -2,33 +2,38 @@
 <html lang="en">
 <head>
   <!-- Cronitor RUM -->
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '6f57c9bf7ea10a4a6cfc8218ac1cca1c' });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0K34FCY36K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </script>
 
-<link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K34FCY36K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0K34FCY36K');
+  </script>
 
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="shortcut icon" href="favicon.ico" />
 
-  gtag('config', 'G-0K34FCY36K');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Write Time – Writing Competitions with Cash prizes</title>
 
   <!-- SEO & Social Metadata -->
-  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters.">
-  <meta property="og:title" content="Write Time – Writing Competitions">
-  <meta property="og:description" content="Find the best writing contests for poets, authors, and screenwriters.">
-  <meta property="og:image" content="images/social-preview.png">
-  <meta name="theme-color" content="#007bff">
+  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters." />
+  <meta property="og:title" content="Write Time – Writing Competitions" />
+  <meta property="og:description" content="Find the best writing contests for poets, authors, and screenwriters." />
+  <meta property="og:image" content="images/social-preview.png" />
+  <meta name="theme-color" content="#007bff" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -166,70 +171,91 @@
   <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
 </nav>
 
-  <header>
-    <h1>Write Time</h1>
-    <p>Discover your next writing opportunity.</p>
-    <div class="top-bar">
-      <div class="search-wrap">
-        <label for="searchInput" style="display:none;">Search competitions</label>
-        <input id="searchInput" type="text" placeholder="Search competitions…" aria-label="Search competitions" />
-      </div>
-      <div class="toggle-wrap" role="button" aria-label="Toggle dark mode">
-        <div class="toggle"></div>
-        <span style="font-size:.9rem;color:var(--text-light)">Dark mode</span>
-      </div>
+<header>
+  <h1>Write Time</h1>
+  <p>Discover your next writing opportunity.</p>
+  <div class="top-bar">
+    <div class="search-wrap">
+      <label for="searchInput" style="display:none;">Search competitions</label>
+      <input id="searchInput" type="text" placeholder="Search competitions…" aria-label="Search competitions" />
     </div>
-    <img src="mywritetime-logo.png" alt="My Write Time Logo" style="width: 200px;" />
+    <div class="toggle-wrap" role="button" aria-label="Toggle dark mode" tabindex="0">
+      <div class="toggle"></div>
+      <span style="font-size:.9rem;color:var(--text-light)">Dark mode</span>
+    </div>
+  </div>
+</header>
 
-  </header>
+<form class="filters" id="filterForm">
+  <label>Genre
+    <select id="genre">
+      <option value="">Any</option>
+      <option>Fiction</option>
+      <option>Poetry</option>
+      <option>Short Story</option>
+      <option>Flash Fiction</option>
+      <option>Essay</option>
+      <option>Screenwriting</option>
+      <option>Nonfiction</option>
+      <option>Humor</option>
+      <option>Cartoons</option>
+      <option>Novel</option>
+      <option>Scriptwriting</option>
+    </select>
+  </label>
+  <label>Word Count
+    <select id="wordRange">
+      <option value="">Any</option>
+      <option value="booklength">Booklength Manuscript</option>
+      <option value="lt500">&lt;500</option>
+      <option value="500to1000">500–1000</option>
+      <option value="1000to2000">1000–2000</option>
+      <option value="gt2000">&gt;2000</option>
+    </select>
+  </label>
+  <label>Poetry Lines
+    <select id="lineRange">
+      <option value="">Any</option>
+      <option value="booklength">Booklength Manuscript</option>
+      <option value="lt20">&lt;20</option>
+      <option value="20to40">20–40</option>
+      <option value="gt40">&gt;40</option>
+    </select>
+  </label>
+  <label>Min Prize ($)<input type="number" id="minPrize" /></label>
+  <label>Eligibility
+    <select id="eligibility">
+      <option value="">Any</option>
+      <option>All Ages</option>
+      <option>Women writers</option>
+      <option>Young writers</option>
+      <option>Emerging authors</option>
+      <option>College students</option>
+      <option>Middle School</option>
+      <option>High School</option>
+      <option>First novelists</option>
+      <option>Poets unpublished</option>
+    </select>
+  </label>
+  <label>Deadline Before<input type="date" id="deadline" /></label>
+  <label>Sort by
+    <select id="sortBy">
+      <option value="">None</option>
+      <option value="feeAsc">Fee ↑</option>
+      <option value="feeDesc">Fee ↓</option>
+      <option value="prizeDesc">Prize ↓</option>
+      <option value="deadlineAsc">Deadline ↑</option>
+    </select>
+  </label>
+</form>
 
-  <form class="filters" id="filterForm">
-    <label>Genre
-      <select id="genre">
-        <option value="">Any</option><option>Fiction</option><option>Poetry</option>
-        <option>Short Story</option><option>Flash Fiction</option><option>Essay</option>
-        <option>Screenwriting</option><option>Nonfiction</option><option>Humor</option>
-        <option>Cartoons</option><option>Novel</option><option>Scriptwriting</option>
-      </select>
-    </label>
-    <label>Word Count
-      <select id="wordRange">
-        <option value="">Any</option><option value="booklength">Booklength Manuscript</option>
-        <option value="lt500">&lt;500</option><option value="500to1000">500–1000</option>
-        <option value="1000to2000">1000–2000</option><option value="gt2000">&gt;2000</option>
-      </select>
-    </label>
-    <label>Poetry Lines
-      <select id="lineRange">
-        <option value="">Any</option><option value="booklength">Booklength Manuscript</option>
-        <option value="lt20">&lt;20</option><option value="20to40">20–40</option><option value="gt40">&gt;40</option>
-      </select>
-    </label>
-    <label>Min Prize ($)<input type="number" id="minPrize" /></label>
-    <label>Eligibility
-      <select id="eligibility">
-        <option value="">Any</option><option>All Ages</option><option>Women writers</option>
-        <option>Young writers</option><option>Emerging authors</option><option>College students</option>
-        <option>Middle School</option><option>High School</option><option>First novelists</option>
-        <option>Poets unpublished</option>
-      </select>
-    </label>
-    <label>Deadline Before<input type="date" id="deadline" /></label>
-    <label>Sort by
-      <select id="sortBy">
-        <option value="">None</option>
-        <option value="feeAsc">Fee ↑</option><option value="feeDesc">Fee ↓</option>
-        <option value="prizeDesc">Prize ↓</option><option value="deadlineAsc">Deadline ↑</option>
-      </select>
-    </label>
-  </form>
+<section id="recommended">
+  <h2>Recommended Competitions</h2>
+  <div id="recommended-results"></div>
+</section>
 
-  <section id="recommended">
-    <h2>Recommended Competitions</h2>
-    <div id="recommended-results"></div>
-  </section>
+<main id="results"></main>
 
-  <main id="results"></main>
 <footer>
   <p>
     © 2025 My Write Time &nbsp; | &nbsp;
@@ -238,143 +264,158 @@
   </p>
 </footer>
 
-  <!-- Script -->
-  <script>
-    const $ = id => document.getElementById(id);
-    const results = $('results'), searchInput = $('searchInput'), filterForm = $('filterForm');
-    const favSet = new Set(JSON.parse(localStorage.getItem('favs') || '[]'));
-    document.body.dataset.theme = localStorage.getItem('theme') || 'light';
+<!-- Script -->
+<script>
+  const $ = id => document.getElementById(id);
+  const results = $('results'), searchInput = $('searchInput'), filterForm = $('filterForm');
+  const favSet = new Set(JSON.parse(localStorage.getItem('favs') || '[]'));
+  document.body.dataset.theme = localStorage.getItem('theme') || 'light';
 
-    document.querySelector('.toggle-wrap').addEventListener('click', () => {
-      const newT = document.body.dataset.theme === 'light' ? 'dark' : 'light';
-      document.body.dataset.theme = newT;
-      localStorage.setItem('theme', newT);
+  document.querySelector('.toggle-wrap').addEventListener('click', () => {
+    const newT = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+    document.body.dataset.theme = newT;
+    localStorage.setItem('theme', newT);
+  });
+
+  // Support keyboard toggle (space/enter)
+  document.querySelector('.toggle-wrap').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.querySelector('.toggle-wrap').click();
+    }
+  });
+
+  function wcOk(wc, r) {
+    if (!r) return true;
+    if (r === 'booklength') return wc === "Booklength Manuscript";
+    if (typeof wc !== 'number') return false;
+    return (r === 'lt500' ? wc < 500 :
+            r === '500to1000' ? wc >= 500 && wc <= 1000 :
+            r === '1000to2000' ? wc >= 1000 && wc <= 2000 :
+            r === 'gt2000' ? wc > 2000 : true);
+  }
+  function lnOk(ln, r) {
+    if (!r) return true;
+    if (r === 'booklength') return ln === "Booklength Manuscript";
+    if (typeof ln !== 'number') return false;
+    return (r === 'lt20' ? ln < 20 : r === '20to40' ? ln >= 20 && ln <= 40 : r === 'gt40' ? ln > 40 : true);
+  }
+
+  let competitions = [];
+
+  function renderCard(c) {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
+      <p class="meta">
+        <strong>Genre:</strong> ${c.genre} · 
+        <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · 
+        <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}
+      </p>
+      <p class="meta">
+        <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
+        <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
+        <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
+        <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
+      </p>
+      <p>${c.description || ''}</p>
+      <svg class="heart ${favSet.has(c.name) ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
+        <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
+      </svg>
+    `;
+    // Heart toggle
+    const heart = card.querySelector('.heart');
+    heart.onclick = () => {
+      if (favSet.has(c.name)) { favSet.delete(c.name); }
+      else { favSet.add(c.name); }
+      localStorage.setItem('favs',
+      JSON.stringify([...favSet]));
+      heart.classList.toggle('fav');
+    };
+    // Make heart accessible by keyboard (space/enter)
+    heart.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        heart.click();
+      }
+    });
+    return card;
+  }
+
+  function render(arr) {
+    results.innerHTML = '';
+    if (!arr.length) {
+      results.innerHTML = '<p style="text-align:center;opacity:.5;font-style:italic;">No competitions found.</p>';
+      return;
+    }
+    arr.forEach(c => {
+      results.appendChild(renderCard(c));
+    });
+  }
+
+  function applyFilters() {
+    const s = searchInput.value.toLowerCase();
+    const genre = $('genre').value, wordRange = $('wordRange').value,
+          lineRange = $('lineRange').value, minPrize = Number($('minPrize').value),
+          elig = $('eligibility').value, dead = $('deadline').value, sort = $('sortBy').value;
+
+    let filtered = competitions.filter(c => {
+      if (s && !c.name.toLowerCase().includes(s)) return false;
+      if (genre && c.genre !== genre) return false;
+      if (!wcOk(c.wordcount, wordRange)) return false;
+      if (!lnOk(c.lines, lineRange)) return false;
+      if (minPrize && (!c.prize || c.prize < minPrize)) return false;
+      if (elig && c.eligibility !== elig) return false;
+      if (dead && c.deadline && c.deadline > dead) return false;
+      return true;
     });
 
-    function wcOk(wc, r) {
-      if (!r) return true;
-      if (r === 'booklength') return wc === "Booklength Manuscript";
-      if (typeof wc !== 'number') return false;
-      return (r === 'lt500' ? wc < 500 :
-              r === '500to1000' ? wc >= 500 && wc <= 1000 :
-              r === '1000to2000' ? wc >= 1000 && wc <= 2000 :
-              r === 'gt2000' ? wc > 2000 : true);
-    }
-    function lnOk(ln, r) {
-      if (!r) return true;
-      if (r === 'booklength') return ln === "Booklength Manuscript";
-      if (typeof ln !== 'number') return false;
-      return (r === 'lt20' ? ln < 20 : r === '20to40' ? ln >= 20 && ln <= 40 : r === 'gt40' ? ln > 40 : true);
-    }
-
-    let competitions = [];
-
-    function renderCard(c) {
-      const card = document.createElement('article');
-      card.className = 'card';
-      card.innerHTML = `
-        <h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
-        <p class="meta">
-          <strong>Genre:</strong> ${c.genre} · 
-          <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · 
-          <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}
-        </p>
-        <p class="meta">
-          <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
-          <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
-          <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
-          <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
-        </p>
-        <p>${c.description || ''}</p>
-        <svg class="heart ${favSet.has(c.name) ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
-          <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
-        </svg>
-      `;
-      // Heart toggle
-      const heart = card.querySelector('.heart');
-      heart.onclick = () => {
-        if (favSet.has(c.name)) { favSet.delete(c.name); }
-        else { favSet.add(c.name); }
-        localStorage.setItem('favs', JSON.stringify([...favSet]));
-        heart.classList.toggle('fav');
-      };
-      return card;
-    }
-
-    function render(arr) {
-      results.innerHTML = '';
-      if (!arr.length) {
-        results.innerHTML = '<p style="text-align:center;opacity:.5;font-style:italic;">No competitions found.</p>';
-        return;
-      }
-      arr.forEach(c => {
-        results.appendChild(renderCard(c));
+    if (sort) {
+      if (sort === 'feeAsc') filtered.sort((a, b) => (a.fee || 0) - (b.fee || 0));
+      else if (sort === 'feeDesc') filtered.sort((a, b) => (b.fee || 0) - (a.fee || 0));
+      else if (sort === 'prizeDesc') filtered.sort((a, b) => (b.prize || 0) - (a.prize || 0));
+      else if (sort === 'deadlineAsc') filtered.sort((a, b) => {
+        if (!a.deadline) return 1;
+        if (!b.deadline) return -1;
+        return a.deadline.localeCompare(b.deadline);
       });
     }
 
-    function applyFilters() {
-      const s = searchInput.value.toLowerCase();
-      const genre = $('genre').value, wordRange = $('wordRange').value,
-            lineRange = $('lineRange').value, minPrize = Number($('minPrize').value),
-            elig = $('eligibility').value, dead = $('deadline').value, sort = $('sortBy').value;
+    render(filtered);
+  }
 
-      let filtered = competitions.filter(c => {
-        if (s && !c.name.toLowerCase().includes(s)) return false;
-        if (genre && c.genre !== genre) return false;
-        if (!wcOk(c.wordcount, wordRange)) return false;
-        if (!lnOk(c.lines, lineRange)) return false;
-        if (minPrize && (!c.prize || c.prize < minPrize)) return false;
-        if (elig && c.eligibility !== elig) return false;
-        if (dead && c.deadline && c.deadline > dead) return false;
-        return true;
-      });
+  fetch('competitions.json')
+    .then(res => res.json())
+    .then(data => {
+      competitions = data;
 
-      if (sort) {
-        if (sort === 'feeAsc') filtered.sort((a, b) => (a.fee || 0) - (b.fee || 0));
-        else if (sort === 'feeDesc') filtered.sort((a, b) => (b.fee || 0) - (a.fee || 0));
-        else if (sort === 'prizeDesc') filtered.sort((a, b) => (b.prize || 0) - (a.prize || 0));
-        else if (sort === 'deadlineAsc') filtered.sort((a, b) => {
-          if (!a.deadline) return 1;
-          if (!b.deadline) return -1;
-          return a.deadline.localeCompare(b.deadline);
+      // Recommended section
+      const recommended = competitions.filter(c => c.recommended);
+      const recommendedContainer = document.getElementById('recommended-results');
+      recommendedContainer.innerHTML = '';
+      if (recommended.length === 0) {
+        recommendedContainer.innerHTML = '<p style="opacity: 0.7; font-style: italic;">No recommended competitions at the moment.</p>';
+      } else {
+        recommended.forEach(c => {
+          recommendedContainer.appendChild(renderCard(c));
         });
       }
 
-      render(filtered);
-    }
+      applyFilters();
+    })
+    .catch(err => {
+      results.innerHTML = `
+        <p style="color:red;text-align:center;">
+          ⚠️ Failed to load competitions.json.<br/>
+          <button onclick="location.reload()">Retry</button>
+        </p>`;
+      console.error(err);
+    });
 
-    fetch('competitions.json')
-      .then(res => res.json())
-      .then(data => {
-        competitions = data;
-
-        // Recommended section
-        const recommended = competitions.filter(c => c.recommended);
-        const recommendedContainer = document.getElementById('recommended-results');
-        recommendedContainer.innerHTML = '';
-        if (recommended.length === 0) {
-          recommendedContainer.innerHTML = '<p style="opacity: 0.7; font-style: italic;">No recommended competitions at the moment.</p>';
-        } else {
-          recommended.forEach(c => {
-            recommendedContainer.appendChild(renderCard(c));
-          });
-        }
-
-        applyFilters();
-      })
-      .catch(err => {
-        results.innerHTML = `
-          <p style="color:red;text-align:center;">
-            ⚠️ Failed to load competitions.json.<br/>
-            <button onclick="location.reload()">Retry</button>
-          </p>`;
-        console.error(err);
-      });
-
-    // Filter and search event listeners
-    searchInput.addEventListener('input', applyFilters);
-    filterForm.addEventListener('change', applyFilters);
-
-  </script>
+  // Filter and search event listeners
+  searchInput.addEventListener('input', applyFilters);
+  filterForm.addEventListener('change', applyFilters);
+</script>
 </body>
 </html>
