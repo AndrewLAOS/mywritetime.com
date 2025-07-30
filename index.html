@@ -4,11 +4,13 @@
   <!-- Cronitor RUM -->
   <script async src="https://rum.cronitor.io/script.js"></script>
   <script>
-    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    window.cronitor = window.cronitor || function() {
+      (window.cronitor.q = window.cronitor.q || []).push(arguments);
+    };
     cronitor('config', { clientKey: '6f57c9bf7ea10a4a6cfc8218ac1cca1c' });
   </script>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K34FCY36K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,158 +19,130 @@
     gtag('config', 'G-0K34FCY36K');
   </script>
 
-<meta property="og:title" content="My Write Time – Find Writing Contests" />
-<meta property="og:description" content="Discover and share upcoming writing competitions for poets, fiction writers, and more." />
-<meta property="og:image" content="https://mywritetime.com/social-preview.png" />
-<meta property="og:url" content="https://mywritetime.com" />
-<meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="shortcut icon" href="favicon.ico" />
-
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Write Time – Writing Competitions with Cash prizes</title>
-
-  <!-- SEO & Social Metadata -->
-  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters." />
-  <meta property="og:title" content="Write Time – Writing Competitions" />
-  <meta property="og:description" content="Find the best writing contests for poets, authors, and screenwriters." />
-  <meta property="og:image" content="images/social-preview.png" />
+  <title>My Write Time – Writing Competitions with Cash Prizes</title>
+  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters for young and creative writers." />
   <meta name="theme-color" content="#007bff" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="My Write Time – Writing Contests for Young Writers" />
+  <meta property="og:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
+  <meta property="og:image" content="https://mywritetime.com/social-preview.png" />
+  <meta property="og:url" content="https://mywritetime.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Write Time – Writing Contests for Young Writers" />
+  <meta name="twitter:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
+  <meta name="twitter:image" content="https://mywritetime.com/social-preview.png" />
+
+  <!-- JSON-LD Logo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "My Write Time",
+    "url": "https://mywritetime.com",
+    "logo": "https://mywritetime.com/social-preview.png"
+  }
+  </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
+  <!-- Custom Styles -->
   <style>
-    :root {
-      --bg: #f8f9fa; --card: #fff; --card-shadow: 0 6px 20px rgba(0,0,0,.08);
-      --text: #212529; --text-light: #6c757d; --accent: #007bff; --border: #e9ecef;
-      --header-bg: #e0e6ed; --header-text: #343a40;
-    }
-    [data-theme="dark"] {
-      --bg: #1a202c; --card: #2d3748; --card-shadow: 0 8px 25px rgba(0,0,0,.6);
-      --text: #e2e8f0; --text-light: #a0aec0; --accent: #63b3ed; --border: #4a5568;
-      --header-bg: #2a3341; --header-text: #e2e8f0;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: Poppins, sans-serif; }
-    body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; transition: .3s; }
-
-    .navbar {
-      background: var(--header-bg); box-shadow: var(--card-shadow); padding: 1rem 2rem;
-      display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem;
-    }
-    .nav-link {
-      color: var(--header-text); font-weight: 600; text-decoration: none;
-      font-size: 1rem; padding-bottom: 3px; border-bottom: 3px solid transparent; transition: .3s;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--accent); border-bottom-color: var(--accent);
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
     }
 
     header {
-      background: var(--header-bg); color: var(--header-text); padding: 2.5rem 2rem;
-      text-align: center; box-shadow: var(--card-shadow); margin-bottom: 2rem;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem;
-    }
-    header p { font-size: 1.1rem; opacity: .9; margin-bottom: 2rem; }
-
-    .top-bar {
-      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center;
-    }
-    .search-wrap {
-      display: flex; align-items: center; border: 1px solid var(--border); border-radius: 8px;
-      padding: .5rem 1rem; background: var(--card); box-shadow: var(--card-shadow); transition: .3s;
-    }
-    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,123,255,.25); }
-    .search-wrap input {
-      border: none; background: transparent; padding: .2rem .5rem; min-width: 220px;
-      font-size: 1rem; color: inherit; outline: none;
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .toggle-wrap { display: flex; align-items: center; gap: .6rem; cursor: pointer; }
-    .toggle {
-      position: relative; width: 48px; height: 26px; background: var(--border);
-      border-radius: 13px; transition: .25s;
-    }
-    .toggle::after {
-      content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
-      border-radius: 50%; background: #fff; transition: .25s;
-    }
-    [data-theme="dark"] .toggle { background: var(--accent); }
-    [data-theme="dark"] .toggle::after { transform: translateX(22px); }
-
-    .filters {
-      display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem;
-      justify-content: center; background: var(--card); box-shadow: var(--card-shadow);
-      border-radius: 10px; max-width: 1200px; margin: 1rem auto;
-    }
-    .filters label {
-      display: flex; flex-direction: column; font-size: .95rem; color: var(--text-light);
-    }
-    .filters select, .filters input[type=number], .filters input[type=date] {
-      margin-top: .4rem; border: 1px solid var(--border); padding: .6rem .8rem;
-      border-radius: 6px; background: var(--bg); color: var(--text);
-      font-size: .95rem; outline: none; transition: .3s;
-    }
-    .filters select:focus, .filters input:focus { border-color: var(--accent); }
-
-    #recommended {
-      max-width: 1200px;
-      margin: 0 auto 2rem;
-      padding: 0 1rem;
-    }
-    #recommended h2 {
+    h1, h2, h3 {
       font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    #recommended-results {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-      gap: 1.5rem;
+      color: #1a1a1a;
     }
 
-    #results {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem; padding: 2.5rem; max-width: 1200px; margin: 0 auto; flex-grow: 1;
+    a {
+      color: #007bff;
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
     .card {
-      background: var(--card); border-radius: 12px; box-shadow: var(--card-shadow);
-      padding: 1.8rem; display: flex; flex-direction: column; position: relative; transition: .3s;
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
     }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,.15); }
-    .card h3 { font-size: 1.25rem; margin-bottom: .7rem; color: var(--accent); }
-    .card a { color: var(--accent); text-decoration: none; font-weight: 500; transition: .2s; }
-    .card a:hover { color: var(--text); }
-    .meta { font-size: .9rem; color: var(--text-light); margin-bottom: .4rem; line-height: 1.5; }
-    .meta strong { color: var(--text); }
 
-    .heart {
-      position: absolute; top: 18px; right: 18px; width: 24px; height: 24px; cursor: pointer;
-      fill: none; stroke: var(--text-light); stroke-width: 2; transition: .25s;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
     }
-    .heart:hover { transform: scale(1.1); }
-    .heart.fav { fill: var(--accent); stroke: var(--accent); }
 
-    footer { text-align: center; font-size: .85rem; color: var(--text-light); padding: 1.5rem 0; margin-top: 2rem; }
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      color: #666666;
+      margin-top: 2rem;
+    }
 
-    @media(max-width:768px){
-      header { padding: 1.5rem 1rem; } header h1 { font-size: 2.2rem; }
-      .filters { padding: 1rem; flex-direction: column; align-items: center; }
-      #recommended-results, #results { padding: 1.5rem; grid-template-columns: 1fr; }
-      .card { padding: 1.5rem; }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .container {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
+
 <body data-theme="light">
 <nav class="navbar">
   <a href="index.html" class="nav-link" id="nav-home">Home</a>
