@@ -1,44 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <!-- Homepage -->
   <url>
     <loc>https://mywritetime.com/</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Submit Competition page -->
+  <!-- Submit Competition -->
   <url>
     <loc>https://mywritetime.com/submit.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Calendar page -->
+  <!-- Calendar -->
   <url>
     <loc>https://mywritetime.com/calendar.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Admin page -->
+  <!-- Admin -->
   <url>
     <loc>https://mywritetime.com/admin.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
-  <!-- Blog page -->
+  <!-- Blog post -->
   <url>
     <loc>https://mywritetime.com/top-10-free-writing-contests-2025.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -46,7 +44,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://mywritetime.com/privacy.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -54,10 +52,9 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://mywritetime.com/terms.html</loc>
-    <lastmod>2025-08-02</lastmod>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
 </urlset>
-
