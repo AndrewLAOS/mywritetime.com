@@ -1,345 +1,455 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
+  <!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '89e3497c6d84b34955e4eb477b0079d8' });
+</script>
+
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K34FCY36K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0K34FCY36K');
+  </script>
+
+  <!-- Meta Basics -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ultimate Rock, Paper, Scissors Flip</title>
+  <title>My Write Time – Writing Competitions with Cash Prizes</title>
+  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters for young and creative writers." />
+  <meta name="theme-color" content="#007bff" />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="My Write Time – Writing Contests for Young Writers" />
+  <meta property="og:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
+  <meta property="og:image" content="https://mywritetime.com/social-preview.png" />
+  <meta property="og:url" content="https://mywritetime.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Write Time – Writing Contests for Young Writers" />
+  <meta name="twitter:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
+  <meta name="twitter:image" content="https://mywritetime.com/social-preview.png" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "My Write Time",
+  "url": "https://mywritetime.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://mywritetime.com/logo.png",
+    "width": 192,
+    "height": 192
+  },
+  "sameAs": [
+    "https://www.facebook.com/mywritetime",
+    "https://www.instagram.com/mywritetime",
+    "https://www.linkedin.com/company/mywritetime"
+  ]
+}
+</script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #f8f9fa; --card: #fff; --card-shadow: 0 6px 20px rgba(0,0,0,.08);
+      --text: #212529; --text-light: #6c757d; --accent: #007bff; --border: #e9ecef;
+      --header-bg: #e0e6ed; --header-text: #343a40;
     }
-    body {
-      margin: 0;
-      font-family: 'Comfortaa', cursive, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      user-select: none;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    [data-theme="dark"] {
+      --bg: #1a202c; --card: #2d3748; --card-shadow: 0 8px 25px rgba(0,0,0,.6);
+      --text: #e2e8f0; --text-light: #a0aec0; --accent: #63b3ed; --border: #4a5568;
+      --header-bg: #2a3341; --header-text: #e2e8f0;
     }
 
-    /* Container */
-    .app-container {
-      background: rgba(255 255 255 / 0.1);
-      border-radius: 20px;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-      width: 480px;
-      max-width: 90vw;
-      padding: 2rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255 255 255 / 0.15);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: Poppins, sans-serif; }
+    body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; transition: .3s; }
+
+    .navbar {
+      background: var(--header-bg); box-shadow: var(--card-shadow); padding: 1rem 2rem;
+      display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem;
+    }
+    .nav-link {
+      color: var(--header-text); font-weight: 600; text-decoration: none;
+      font-size: 1rem; padding-bottom: 3px; border-bottom: 3px solid transparent; transition: .3s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent); border-bottom-color: var(--accent);
     }
 
-    /* Title */
-    h1 {
-      font-weight: 900;
-      font-size: 2.8rem;
-      text-align: center;
-      margin: 0;
-      letter-spacing: 0.05em;
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      user-select: none;
+    header {
+      background: var(--header-bg); color: var(--header-text); padding: 2.5rem 2rem;
+      text-align: center; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem;
+    }
+    header p { font-size: 1.1rem; opacity: .9; margin-bottom: 2rem; }
+
+    .top-bar {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center;
+    }
+    .search-wrap {
+      display: flex; align-items: center; border: 1px solid var(--border); border-radius: 8px;
+      padding: .5rem 1rem; background: var(--card); box-shadow: var(--card-shadow); transition: .3s;
+    }
+    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,123,255,.25); }
+    .search-wrap input {
+      border: none; background: transparent; padding: .2rem .5rem; min-width: 220px;
+      font-size: 1rem; color: inherit; outline: none;
     }
 
-    /* Navigation Tabs */
-    nav {
-      display: flex;
-      gap: 0.5rem;
-      user-select: none;
+    .toggle-wrap { display: flex; align-items: center; gap: .6rem; cursor: pointer; }
+    .toggle {
+      position: relative; width: 48px; height: 26px; background: var(--border);
+      border-radius: 13px; transition: .25s;
     }
-    nav button {
-      flex: 1;
-      background: rgba(255 255 255 / 0.15);
-      border: none;
-      padding: 0.85rem 1rem;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #eee;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      outline-offset: 3px;
-      outline-color: transparent;
-      box-shadow: inset 0 0 8px rgba(255 255 255 / 0.2);
+    .toggle::after {
+      content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+      border-radius: 50%; background: #fff; transition: .25s;
     }
-    nav button[aria-selected="true"],
-    nav button:hover {
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      box-shadow: 0 6px 18px rgba(229, 46, 113, 0.85);
-      color: white;
-      outline-color: #e52e71;
-    }
-    nav button:focus-visible {
-      outline: 3px solid #e52e71;
-      outline-offset: 3px;
-    }
+    [data-theme="dark"] .toggle { background: var(--accent); }
+    [data-theme="dark"] .toggle::after { transform: translateX(22px); }
 
-    /* Main Content area */
-    main {
-      flex-grow: 1;
-      min-height: 300px;
-      background: rgba(255 255 255 / 0.05);
-      border-radius: 18px;
-      padding: 1.75rem 2rem;
-      color: #f0f0f0;
-      overflow-y: auto;
-      user-select: none;
-      box-shadow: inset 0 0 24px rgba(0,0,0,0.25);
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem;
+      justify-content: center; background: var(--card); box-shadow: var(--card-shadow);
+      border-radius: 10px; max-width: 1200px; margin: 1rem auto;
     }
+    .filters label {
+      display: flex; flex-direction: column; font-size: .95rem; color: var(--text-light);
+    }
+    .filters select, .filters input[type=number], .filters input[type=date] {
+      margin-top: .4rem; border: 1px solid var(--border); padding: .6rem .8rem;
+      border-radius: 6px; background: var(--bg); color: var(--text);
+      font-size: .95rem; outline: none; transition: .3s;
+    }
+    .filters select:focus, .filters input:focus { border-color: var(--accent); }
 
-    /* Screens: only active screen visible */
-    section.screen {
-      display: none;
+    #recommended {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
     }
-    section.screen.active {
-      display: block;
-    }
-
-    /* Battle Choices container */
-    #battle-choices {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
+    #recommended h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
       margin-bottom: 1rem;
     }
-    button.choice-btn {
-      flex: 1 1 120px;
-      min-width: 110px;
-      padding: 1rem 1.5rem;
-      border-radius: 18px;
-      border: none;
-      background: linear-gradient(145deg, #ffe6a7, #ffb347);
-      color: #222;
-      font-weight: 700;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.35s ease;
-      box-shadow: 0 5px 15px rgba(255, 151, 0, 0.6);
-      user-select: none;
-    }
-    button.choice-btn:hover:not(:disabled) {
-      transform: scale(1.08);
-      box-shadow: 0 8px 28px rgba(255, 151, 0, 0.8);
-    }
-    button.choice-btn:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
+    #recommended-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 1.5rem;
     }
 
-    /* Battle status message */
-    #battle-status {
-      font-weight: 700;
-      font-size: 1.3rem;
-      text-align: center;
-      margin-top: 0.8rem;
-      min-height: 2.4rem;
-      user-select: text;
-      line-height: 1.3;
+    #results {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem; padding: 2.5rem; max-width: 1200px; margin: 0 auto; flex-grow: 1;
     }
+    .card {
+      background: var(--card); border-radius: 12px; box-shadow: var(--card-shadow);
+      padding: 1.8rem; display: flex; flex-direction: column; position: relative; transition: .3s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+    .card h3 { font-size: 1.25rem; margin-bottom: .7rem; color: var(--accent); }
+    .card a { color: var(--accent); text-decoration: none; font-weight: 500; transition: .2s; }
+    .card a:hover { color: var(--text); }
+    .meta { font-size: .9rem; color: var(--text-light); margin-bottom: .4rem; line-height: 1.5; }
+    .meta strong { color: var(--text); }
 
-    /* Shop screen styling */
-    #shop-items {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-height: 280px;
-      overflow-y: auto;
-      user-select: none;
+    .heart {
+      position: absolute; top: 18px; right: 18px; width: 24px; height: 24px; cursor: pointer;
+      fill: none; stroke: var(--text-light); stroke-width: 2; transition: .25s;
     }
-    .shop-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(255 255 255 / 0.1);
-      padding: 0.8rem 1.2rem;
-      border-radius: 16px;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
-      transition: background-color 0.25s ease;
-    }
-    .shop-item:hover {
-      background: rgba(255 255 255 / 0.2);
-    }
-    .shop-icon {
-      font-size: 1.7rem;
-      user-select: none;
-    }
-    .shop-name {
-      flex-grow: 1;
-      font-weight: 700;
-      font-size: 1.2rem;
-      user-select: text;
-    }
-    .shop-rarity {
-      font-style: italic;
-      color: #ffd27f;
-      user-select: none;
-    }
-    .shop-cost {
-      font-weight: 700;
-      color: #ffb347;
-      user-select: none;
-    }
-    .shop-item button {
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      border: none;
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(229, 46, 113, 0.75);
-      transition: background-color 0.3s ease;
-    }
-    .shop-item button:disabled {
-      background: rgba(255 255 255 / 0.3);
-      cursor: not-allowed;
-      box-shadow: none;
-      color: #aaa;
-    }
+    .heart:hover { transform: scale(1.1); }
+    .heart.fav { fill: var(--accent); stroke: var(--accent); }
 
-    /* Matchup graph container */
-    #matchup-graph {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 280px;
-    }
+    footer { text-align: center; font-size: .85rem; color: var(--text-light); padding: 1.5rem 0; margin-top: 2rem; }
 
-    /* Bot inventory styling */
-    #bot-inventory-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      max-height: 280px;
-      overflow-y: auto;
-      user-select: none;
+    @media(max-width:768px){
+      header { padding: 1.5rem 1rem; } header h1 { font-size: 2.2rem; }
+      .filters { padding: 1rem; flex-direction: column; align-items: center; }
+      #recommended-results, #results { padding: 1.5rem; grid-template-columns: 1fr; }
+      .card { padding: 1.5rem; }
     }
-    .inventory-item {
-      background: rgba(255 255 255 / 0.1);
-      border-radius: 14px;
-      padding: 0.8rem 1rem;
-      width: 110px;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-      text-align: center;
-      color: #fff;
-    }
-    .inventory-icon {
-      font-size: 2.4rem;
-      margin-bottom: 0.3rem;
-      user-select: none;
-    }
-    .inventory-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      user-select: text;
-    }
-    .inventory-rarity {
-      font-style: italic;
-      color: #ffd27f;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-
-    /* Scrollbar styling */
-    main::-webkit-scrollbar,
-    #shop-items::-webkit-scrollbar,
-    #bot-inventory-items::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    main::-webkit-scrollbar-thumb,
-    #shop-items::-webkit-scrollbar-thumb,
-    #bot-inventory-items::-webkit-scrollbar-thumb {
-      background: rgba(229, 46, 113, 0.6);
-      border-radius: 10px;
-    }
-    main::-webkit-scrollbar-track,
-    #shop-items::-webkit-scrollbar-track,
-    #bot-inventory-items::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #ccc;
-      padding-top: 1rem;
-      user-select: none;
-    }
-
   </style>
 </head>
-<body>
-  <div class="app-container" role="main" aria-label="Ultimate Rock Paper Scissors Flip Game">
+<body data-theme="light">
+<nav class="navbar">
+  <a href="index.html" class="nav-link" id="nav-home">Home</a>
+  <a href="submit.html" class="nav-link" id="nav-submit">Submit Competition</a>
+  <a href="calendar.html" class="nav-link" id="nav-calendar">Calendar</a>
+  <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
+  <a href="top-10-free-writing-contests-2025.html">Blog</a>
 
-    <h1>Ultimate Rock, Paper, Scissors Flip</h1>
+</nav>
 
-    <nav role="tablist" aria-label="Game navigation">
-      <button id="nav-battle" aria-controls="battle-screen" aria-selected="true" role="tab" tabindex="0">Battle</button>
-      <button id="nav-shop" aria-controls="shop-screen" aria-selected="false" role="tab" tabindex="-1">Shop</button>
-      <button id="nav-matchup" aria-controls="matchup-screen" aria-selected="false" role="tab" tabindex="-1">Matchups</button>
-      <button id="nav-bot-inventory" aria-controls="bot-inventory-screen" aria-selected="false" role="tab" tabindex="-1">Bot Inventory</button>
-    </nav>
+<header>
+  <h1>My Write Time</h1>
+  <p>Discover your next writing opportunity.</p>
+  <div class="top-bar">
+    <div class="search-wrap">
+      <label for="searchInput" style="display:none;">Search competitions</label>
+      <input id="searchInput" type="text" placeholder="Search competitions…" aria-label="Search competitions" />
+    </div>
+    <div class="toggle-wrap" role="button" aria-label="Toggle dark mode" tabindex="0">
+      <div class="toggle"></div>
+      <span style="font-size:.9rem;color:var(--text-light)">Dark mode</span>
+    </div>
+  </div>
+</header>
 
-    <main>
-      <section id="battle-screen" role="tabpanel" tabindex="0" aria-label="Battle screen" class="screen active" >
-        <div id="battle-choices" aria-live="polite" aria-atomic="true" aria-relevant="additions"></div>
-        <div id="battle-status" role="status" aria-live="polite" aria-atomic="true" style="margin-top:0.6rem;"></div>
-      </section>
+<form class="filters" id="filterForm">
+  <label>Genre
+    <select id="genre">
+      <option value="">Any</option>
+      <option>Fiction</option>
+      <option>Poetry</option>
+      <option>Short Story</option>
+      <option>Flash Fiction</option>
+      <option>Essay</option>
+      <option>Screenwriting</option>
+      <option>Nonfiction</option>
+      <option>Humor</option>
+      <option>Cartoons</option>
+      <option>Novel</option>
+      <option>Scriptwriting</option>
+    </select>
+  </label>
+  <label>Word Count
+    <select id="wordRange">
+      <option value="">Any</option>
+      <option value="booklength">Booklength Manuscript</option>
+      <option value="lt500">&lt;500</option>
+      <option value="500to1000">500–1000</option>
+      <option value="1000to2000">1000–2000</option>
+      <option value="gt2000">&gt;2000</option>
+    </select>
+  </label>
+  <label>Poetry Lines
+    <select id="lineRange">
+      <option value="">Any</option>
+      <option value="booklength">Booklength Manuscript</option>
+      <option value="lt20">&lt;20</option>
+      <option value="20to40">20–40</option>
+      <option value="gt40">&gt;40</option>
+    </select>
+  </label>
+  <label>Min Prize ($)<input type="number" id="minPrize" /></label>
+  <label>Eligibility
+    <select id="eligibility">
+      <option value="">Any</option>
+      <option>All Ages</option>
+      <option>Women writers</option>
+      <option>Young writers</option>
+      <option>Emerging authors</option>
+      <option>College students</option>
+      <option>Middle School</option>
+      <option>High School</option>
+      <option>First novelists</option>
+      <option>Poets unpublished</option>
+    </select>
+  </label>
+  <label>Deadline Before<input type="date" id="deadline" /></label>
+  <label>Sort by
+    <select id="sortBy">
+      <option value="">None</option>
+      <option value="feeAsc">Fee ↑</option>
+      <option value="feeDesc">Fee ↓</option>
+      <option value="prizeDesc">Prize ↓</option>
+      <option value="deadlineAsc">Deadline ↑</option>
+    </select>
+  </label>
+</form>
 
-      <section id="shop-screen" role="tabpanel" tabindex="-1" aria-label="Shop screen" class="screen" hidden>
-        <div id="shop-items"></div>
-        <div id="shop-status" style="margin-top:0.6rem; font-weight:700;"></div>
-      </section>
-
-      <section id="matchup-screen" role="tabpanel" tabindex="-1" aria-label="Matchup graph screen" class="screen" hidden>
-        <div id="matchup-graph"></div>
-      </section>
-
-      <section id="bot-inventory-screen" role="tabpanel" tabindex="-1" aria-label="Bot Inventory screen" class="screen" hidden>
-        <div id="bot-inventory-items"></div>
-      </section>
-    </main>
-<section aria-label="Bot difficulty control" style="margin-top: 1rem; text-align: center; user-select: none;">
-  <label for="bot-difficulty-slider" style="font-weight: 700; font-size: 1rem; color: #ffd27f;">Bot Difficulty</label><br />
-  <input
-    type="range"
-    id="bot-difficulty-slider"
-    min="0"
-    max="100"
-    value="50"
-    style="width: 80%; margin-top: 0.25rem;"
-    aria-valuemin="0"
-    aria-valuemax="100"
-    aria-valuenow="50"
-    aria-label="Adjust bot difficulty"
-  />
-  <div id="bot-difficulty-label" style="margin-top: 0.3rem; color: #ffd27f; font-weight: 700;">50%</div>
+<section id="recommended">
+  <h2>Recommended Competitions</h2>
+  <div id="recommended-results"></div>
 </section>
 
-    <footer>
-      <small>© 2025 Ultimate Rock, Paper, Scissors Flip</small>
-    </footer>
+<main id="results"></main>
 
-  </div>
+<footer>
+  <p>
+    © 2025 My Write Time &nbsp; | &nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp; | &nbsp;
+    <a href="terms.html">Terms of Service</a> &nbsp; | &nbsp;
+    Contact: <a href="mailto:Contact@mywritetime.com">Contact@mywritetime.com</a>
+  </p>
+</footer>
 
-  <script type="module" src="game.js"></script>
+
+<!-- Script -->
+<script>
+  const $ = id => document.getElementById(id);
+  const results = $('results'), searchInput = $('searchInput'), filterForm = $('filterForm');
+  const favSet = new Set(JSON.parse(localStorage.getItem('favs') || '[]'));
+  document.body.dataset.theme = localStorage.getItem('theme') || 'light';
+
+  document.querySelector('.toggle-wrap').addEventListener('click', () => {
+    const newT = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+    document.body.dataset.theme = newT;
+    localStorage.setItem('theme', newT);
+  });
+
+  // Support keyboard toggle (space/enter)
+  document.querySelector('.toggle-wrap').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.querySelector('.toggle-wrap').click();
+    }
+  });
+
+  function wcOk(wc, r) {
+    if (!r) return true;
+    if (r === 'booklength') return wc === "Booklength Manuscript";
+    if (typeof wc !== 'number') return false;
+    return (r === 'lt500' ? wc < 500 :
+            r === '500to1000' ? wc >= 500 && wc <= 1000 :
+            r === '1000to2000' ? wc >= 1000 && wc <= 2000 :
+            r === 'gt2000' ? wc > 2000 : true);
+  }
+  function lnOk(ln, r) {
+    if (!r) return true;
+    if (r === 'booklength') return ln === "Booklength Manuscript";
+    if (typeof ln !== 'number') return false;
+    return (r === 'lt20' ? ln < 20 : r === '20to40' ? ln >= 20 && ln <= 40 : r === 'gt40' ? ln > 40 : true);
+  }
+
+  let competitions = [];
+
+  function renderCard(c) {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
+      <p class="meta">
+        <strong>Genre:</strong> ${c.genre} · 
+        <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · 
+        <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}
+      </p>
+      <p class="meta">
+        <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
+        <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
+        <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
+        <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
+      </p>
+      <p>${c.description || ''}</p>
+      <svg class="heart ${favSet.has(c.name) ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
+        <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
+      </svg>
+    `;
+    // Heart toggle
+    const heart = card.querySelector('.heart');
+    heart.onclick = () => {
+      if (favSet.has(c.name)) { favSet.delete(c.name); }
+      else { favSet.add(c.name); }
+      localStorage.setItem('favs',
+      JSON.stringify([...favSet]));
+      heart.classList.toggle('fav');
+    };
+    // Make heart accessible by keyboard (space/enter)
+    heart.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        heart.click();
+      }
+    });
+    return card;
+  }
+
+  function render(arr) {
+    results.innerHTML = '';
+    if (!arr.length) {
+      results.innerHTML = '<p style="text-align:center;opacity:.5;font-style:italic;">No competitions found.</p>';
+      return;
+    }
+    arr.forEach(c => {
+      results.appendChild(renderCard(c));
+    });
+  }
+
+  function applyFilters() {
+    const s = searchInput.value.toLowerCase();
+    const genre = $('genre').value, wordRange = $('wordRange').value,
+          lineRange = $('lineRange').value, minPrize = Number($('minPrize').value),
+          elig = $('eligibility').value, dead = $('deadline').value, sort = $('sortBy').value;
+
+    let filtered = competitions.filter(c => {
+      if (s && !c.name.toLowerCase().includes(s)) return false;
+      if (genre && c.genre !== genre) return false;
+      if (!wcOk(c.wordcount, wordRange)) return false;
+      if (!lnOk(c.lines, lineRange)) return false;
+      if (minPrize && (!c.prize || c.prize < minPrize)) return false;
+      if (elig && c.eligibility !== elig) return false;
+      if (dead && c.deadline && c.deadline > dead) return false;
+      return true;
+    });
+
+    if (sort) {
+      if (sort === 'feeAsc') filtered.sort((a, b) => (a.fee || 0) - (b.fee || 0));
+      else if (sort === 'feeDesc') filtered.sort((a, b) => (b.fee || 0) - (a.fee || 0));
+      else if (sort === 'prizeDesc') filtered.sort((a, b) => (b.prize || 0) - (a.prize || 0));
+      else if (sort === 'deadlineAsc') filtered.sort((a, b) => {
+        if (!a.deadline) return 1;
+        if (!b.deadline) return -1;
+        return a.deadline.localeCompare(b.deadline);
+      });
+    }
+
+    render(filtered);
+  }
+
+  fetch('competitions.json')
+    .then(res => res.json())
+    .then(data => {
+      competitions = data;
+
+      // Recommended section
+      const recommended = competitions.filter(c => c.recommended);
+      const recommendedContainer = document.getElementById('recommended-results');
+      recommendedContainer.innerHTML = '';
+      if (recommended.length === 0) {
+        recommendedContainer.innerHTML = '<p style="opacity: 0.7; font-style: italic;">No recommended competitions at the moment.</p>';
+      } else {
+        recommended.forEach(c => {
+          recommendedContainer.appendChild(renderCard(c));
+        });
+      }
+
+      applyFilters();
+    })
+    .catch(err => {
+      results.innerHTML = `
+        <p style="color:red;text-align:center;">
+          ⚠️ Failed to load competitions.json.<br/>
+          <button onclick="location.reload()">Retry</button>
+        </p>`;
+      console.error(err);
+    });
+
+  // Filter and search event listeners
+  searchInput.addEventListener('input', applyFilters);
+  filterForm.addEventListener('change', applyFilters);
+</script>
 </body>
 </html>
