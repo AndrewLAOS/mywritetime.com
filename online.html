@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Whimsical RPS Duel Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+<style>
+  /* Base styling */
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Comfortaa', cursive, sans-serif;
+    background: radial-gradient(circle at top left, #b1d1ff, #5472d3);
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+  }
+  #container {
+    margin: 2rem auto;
+    background: linear-gradient(145deg, #f0f6ff, #c5d8ff);
+    border-radius: 24px;
+    box-shadow: 0 20px 48px rgba(30, 42, 80, 0.35);
+    max-width: 580px;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    user-select:none;
+  }
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #1e2a50;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 12px #7799ffcc;
+  }
+  p.subtitle {
+    font-weight: 600;
+    color: #3859b3;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    background: linear-gradient(145deg, #5076d9, #3a55b8);
+    color: #eef4ff;
+    font-weight: 700;
+    border: none;
+    border-radius: 22px;
+    padding: 0.9rem 2.4rem;
+    margin: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px #2a42a0cc;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select:none;
+    font-size: 1.2rem;
+  }
+  button:hover:not(:disabled) {
+    background: linear-gradient(145deg, #3a55b8, #27448a);
+    box-shadow: 0 8px 26px #1d2e74cc;
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #login-section, #match-section, #game-section {
+    margin-top: 1rem;
+  }
+
+  input[type="text"] {
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    border: 2px solid #5472d3;
+    outline-offset: 4px;
+    width: 180px;
+    user-select:none;
+  }
+  input[type="text"]:focus {
+    outline: 3px solid #203d8f;
+  }
+
+  /* Player and opponent display */
+  .player-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  .player-card {
+    perspective: 900px;
+    width: 130px;
+    height: 180px;
+    position: relative;
+    user-select:none;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(30, 42, 80, 0.25);
+    transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
+    transform-style: preserve-3d;
+  }
+  .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: inset 0 0 18px #3f4f9a;
+    user-select:none;
+  }
+  .card-front {
+    background: #2a3b7d;
+  }
+  .card-back {
+    background: linear-gradient(145deg, #5472d3, #3a55b8);
+    transform: rotateY(180deg);
+  }
+
+  .player-name {
+    margin-top: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e2a50;
+    text-shadow: 0 0 8px #4665c7cc;
+    user-select:none;
+  }
+
+  #status-text {
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #2a3c70;
+    min-height: 2.5em;
+    text-shadow: 0 0 10px #7997e3cc;
+    user-select:none;
+  }
+
+  /* Choices buttons */
+  #choices {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  button.choice {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(145deg, #e0e8ff, #c4d7ff);
+    color: #1e2a78;
+    font-size: 2.4rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 6px 20px #5472d3cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  button.choice:hover:not(:disabled) {
+    box-shadow: 0 10px 30px #3a55b8cc;
+    transform: scale(1.15);
+  }
+  button.choice:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .choice-label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    user-select:none;
+  }
+
+  /* Animations for choices on flip */
+  .animate-flip {
+    animation: flipScale 0.8s ease forwards;
+  }
+  @keyframes flipScale {
+    0% { transform: rotateY(0) scale(1); }
+    50% { transform: rotateY(90deg) scale(1.3); }
+    100% { transform: rotateY(180deg) scale(1); }
+  }
+
+  /* Feedback colors */
+  .win-text {
+    color: #317f4b;
+    text-shadow: 0 0 10px #74d18ccc;
+  }
+  .lose-text {
+    color: #a73030;
+    text-shadow: 0 0 10px #d47474cc;
+  }
+  .tie-text {
+    color: #3a3a3a;
+    text-shadow: 0 0 6px #9b9b9bcc;
+  }
+
+  /* Spinner for loading */
+  #loading-spinner {
+    border: 6px solid #eee;
+    border-top: 6px solid #5472d3;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+    margin: 1rem auto;
+    display: none;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Additional fixes to spacing */
+  #match-status, #generated-match-id {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #1e2a50;
+  }
+</style>
+</head>
+<body>
+  <div id="container" role="main" aria-label="Online Whimsical Rock Paper Scissors Duel Game">
+    <h1>Whimsical RPS Duel Online</h1>
+    <p class="subtitle">Play against friends or bots with dramatic card flips!</p>
+
+    <div id="login-section" aria-live="polite">
+      <button id="btnGoogleLogin">Sign in with Google</button>
+      <p id="login-status"></p>
+    </div>
+
+    <div id="match-section" hidden>
+      <button id="btnCreateMatch">Create New Match</button>
+      <br/><br/>
+      <label for="match-id-input">Enter Match ID to Join:</label><br/>
+      <input type="text" id="match-id-input" maxlength="10" placeholder="e.g. ABC123" autocomplete="off" aria-label="Match ID input" />
+      <button id="btnJoinMatch">Join Match</button>
+      <p id="match-status"></p>
+      <p id="generated-match-id"></p>
+    </div>
+
+    <div id="game-section" hidden aria-live="polite" aria-atomic="true">
+      <div class="player-area" aria-label="Players area">
+        <div class="player-card" aria-label="Your card">
+          <div class="card-inner" id="player-card-inner">
+            <div class="card-front">?</div>
+            <div class="card-back" id="player-card-back"></div>
+          </div>
+          <div class="player-name" id="player-name-label"></div>
+        </div>
+        <div class="player-card" aria-label="Opponent card">
+          <div class="card-inner" id="opponent-card-inner">
+            <div class="card-front">?</div>
+            <div class="card-back" id="opponent-card-back"></div>
+          </div>
+          <div class="player-name" id="opponent-name-label"></div>
+        </div>
+      </div>
+
+      <div id="choices" role="list" aria-label="Choose your item to play"></div>
+
+      <div id="status-text" role="status"></div>
+    </div>
+
+    <div id="loading-spinner" aria-hidden="true" role="img" aria-label="Loading spinner"></div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqmG4OxLp7f1kktoLwicGR4O2SLwqNBk0",
+      authDomain: "rps-flip.firebaseapp.com",
+      databaseURL: "https://rps-flip-default-rtdb.firebaseio.com",
+      projectId: "rps-flip",
+      storageBucket: "rps-flip.appspot.com",
+      messagingSenderId: "1044307931173",
+      appId: "1:1044307931173:web:efa8c8bcf4cd82c1e14fcc",
+      measurementId: "G-57Z3NG9FJN"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.database();
+
+    // Game items
+    const ITEMS = {
+      rock: { icon: '✊', name: 'Rock', beats: ['scissors', 'fire'] },
+      paper: { icon: '✋', name: 'Paper', beats: ['rock', 'robot'] },
+      scissors: { icon: '✌️', name: 'Scissors', beats: ['paper', 'water'] },
+      fire: { icon: '🔥', name: 'Fire', beats: ['paper', 'robot'] },
+      water: { icon: '💧', name: 'Water', beats: ['rock', 'fire'] },
+      robot: { icon: '🤖', name: 'Robot', beats: ['scissors', 'water'] }
+    };
+
+    // Elements
+    const loginSection = document.getElementById('login-section');
+    const btnGoogleLogin = document.getElementById('btnGoogleLogin');
+    const loginStatus = document.getElementById('login-status');
+
+    const matchSection = document.getElementById('match-section');
+    const btnCreateMatch = document.getElementById('btnCreateMatch');
+    const matchIdInput = document.getElementById('match-id-input');
+    const btnJoinMatch = document.getElementById('btnJoinMatch');
+    const matchStatus = document.getElementById('match-status');
+    const generatedMatchIdDisplay = document.getElementById('generated-match-id');
+
+    const gameSection = document.getElementById('game-section');
+    const playerCardInner = document.getElementById('player-card-inner');
+    const playerCardBack = document.getElementById('player-card-back');
+    const opponentCardInner = document.getElementById('opponent-card-inner');
+    const opponentCardBack = document.getElementById('opponent-card-back');
+    const playerNameLabel = document.getElementById('player-name-label');
+    const opponentNameLabel = document.getElementById('opponent-name-label');
+    const choicesDiv = document.getElementById('choices');
+    const statusText = document.getElementById('status-text');
+    const loadingSpinner = document.getElementById('loading-spinner');
+
+    let currentUser = null;
+    let matchId = null;
+    let playerNumber = null;
+    let opponentId = null;
+    let gameRef = null;
+
+    // Show/hide spinner
+    function showLoading(show) {
+      loadingSpinner.style.display = show ? 'block' : 'none';
+    }
+
+    // Sign-in with Google
+    btnGoogleLogin.addEventListener('click', () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).catch(err => {
+        loginStatus.textContent = 'Login failed: ' + err.message;
+      });
+    });
+
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        loginStatus.textContent = `Hello, ${user.displayName}!`;
+        loginSection.hidden = true;
+        matchSection.hidden = false;
+        generatedMatchIdDisplay.textContent = '';
+        matchStatus.textContent = '';
+        btnCreateMatch.disabled = false;
+        btnJoinMatch.disabled = false;
+        matchIdInput.disabled = false;
+        gameSection.hidden = true;
+      } else {
+        currentUser = null;
+        loginStatus.textContent = '';
+        loginSection.hidden = false;
+        matchSection.hidden = true;
+        gameSection.hidden = true;
+      }
+    });
+
+    function generateMatchId() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let id = '';
+      for (let i = 0; i < 6; i++) {
+        id += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return id;
+    }
+
+    btnCreateMatch.addEventListener('click', async () => {
+      if (!currentUser) {
+        matchStatus.textContent = 'Please sign in first.';
+        return;
+      }
+      
+      try {
+        btnCreateMatch.disabled = true;
+        btnJoinMatch.disabled = true;
+        matchIdInput.disabled = true;
+        showLoading(true);
+        
+        let newMatchId = generateMatchId();
+        console.log('Trying to create match with ID:', newMatchId);
+
+        let newMatchRef = db.ref(`matches/${newMatchId}`);
+        let snapshot = await newMatchRef.once('value');
+
+        let tries = 0;
+        while (snapshot.exists() && tries < 5) {
+          console.log('Match ID exists, generating new one...');
+          newMatchId = generateMatchId();
+          console.log('Retrying with new match ID:', newMatchId);
+          newMatchRef = db.ref(`matches/${newMatchId}`);
+          snapshot = await newMatchRef.once('value');
+          tries++;
+        }
+        if (tries >= 5) {
+          matchStatus.textContent = 'Failed to generate unique match ID. Try again later.';
+          btnCreateMatch.disabled = false;
+          btnJoinMatch.disabled = false;
+          matchIdInput.disabled = false;
+          showLoading(false);
+          return;
+        }
+
+        await newMatchRef.set({
+          player1: {
+            uid: currentUser.uid,
+            name: currentUser.displayName,
+            choice: null,
+            score: 0,
+          },
+          player2: null,
+          turn: 'player1',
+          result: null,
+          started: false,
+          createdAt: firebase.database.ServerValue.TIMESTAMP,
+        });
+
+        matchId = newMatchId;
+        playerNumber = 'player1';
+        opponentId = 'player2';
+
+        generatedMatchIdDisplay.textContent = `Match created! Share this code: ${newMatchId}`;
+        matchStatus.textContent = '';
+        
+        matchSection.hidden = true;
+        gameSection.hidden = false;
+
+        setupGameUI();
+        listenForGameUpdates();
+
+      } catch (e) {
+        matchStatus.textContent = 'Error creating match: ' + e.message;
+      } finally {
+        btnCreateMatch.disabled = false;
+        btnJoinMatch.disabled = false;
+        matchIdInput.disabled = false;
+        showLoading(false);
+      }
+    });
+
+    btnJoinMatch.addEventListener('click', () => {
+      const enteredId = matchIdInput.value.trim().toUpperCase();
+      if (!enteredId) {
+        matchStatus.textContent = 'Please enter a Match ID to join.';
+        return;
+      }
+      startMatch(enteredId);
+    });
+
+    async function startMatch(id) {
+      showLoading(true);
+      matchStatus.textContent = `Joining match ${id}...`;
+      btnCreateMatch.disabled = true;
+      btnJoinMatch.disabled = true;
+      matchIdInput.disabled = true;
+
+      gameRef = db.ref(`matches/${id}`);
+      let snap;
+      try {
+        snap = await gameRef.once('value');
+        if (!snap.exists()) {
+          matchStatus.textContent = 'Match not found.';
+          btnCreateMatch.disabled = false;
+          btnJoinMatch.disabled = false;
+          matchIdInput.disabled = false;
+          showLoading(false);
+          return;
+        }
+      } catch (err) {
+        matchStatus.textContent = 'Error joining match: ' + err.message;
+        btnCreateMatch.disabled = false;
+        btnJoinMatch.disabled = false;
+        matchIdInput.disabled = false;
+        showLoading(false);
+        return;
+      }
+
+      let matchData = snap.val();
+
+      if (matchData.player2 && matchData.player2.uid !== currentUser.uid) {
+        matchStatus.textContent = 'Match already has two players.';
+        btnCreateMatch.disabled = false;
+        btnJoinMatch.disabled = false;
+        matchIdInput.disabled = false;
+        showLoading(false);
+        return;
+      }
+
+      if (!matchData.player2) {
+        // Join as player2
+        try {
+          await gameRef.child('player2').set({
+            uid: currentUser.uid,
+            name: currentUser.displayName,
+            choice: null,
+            score: 0,
+          });
+          await gameRef.child('started').set(true);
+        } catch (e) {
+          matchStatus.textContent = 'Error joining match: ' + e.message;
+          btnCreateMatch.disabled = false;
+          btnJoinMatch.disabled = false;
+          matchIdInput.disabled = false;
+          showLoading(false);
+          return;
+        }
+        playerNumber = 'player2';
+        opponentId = 'player1';
+      } else {
+        // Rejoin or spectator? For now, deny
+        if (matchData.player1.uid === currentUser.uid) {
+          playerNumber = 'player1';
+          opponentId = 'player2';
+        } else if (matchData.player2.uid === currentUser.uid) {
+          playerNumber = 'player2';
+          opponentId = 'player1';
+        } else {
+          matchStatus.textContent = 'Match full.';
+          btnCreateMatch.disabled = false;
+          btnJoinMatch.disabled = false;
+          matchIdInput.disabled = false;
+          showLoading(false);
+          return;
+        }
+      }
+
+      matchId = id;
+
+      generatedMatchIdDisplay.textContent = '';
+      matchStatus.textContent = '';
+      matchSection.hidden = true;
+      gameSection.hidden = false;
+
+      setupGameUI();
+      listenForGameUpdates();
+      showLoading(false);
+    }
+
+    function setupGameUI() {
+      playerNameLabel.textContent = currentUser.displayName;
+      opponentNameLabel.textContent = 'Waiting for opponent...';
+      resetCards();
+      renderChoices();
+      statusText.textContent = '';
+    }
+
+    function resetCards() {
+      playerCardInner.classList.remove('flipped');
+      opponentCardInner.classList.remove('flipped');
+      playerCardBack.textContent = '?';
+      opponentCardBack.textContent = '?';
+    }
+
+    function renderChoices() {
+      choicesDiv.innerHTML = '';
+      Object.entries(ITEMS).forEach(([key, item]) => {
+        const btn = document.createElement('button');
+        btn.className = 'choice';
+        btn.setAttribute('role', 'listitem');
+        btn.setAttribute('aria-label', `Choose ${item.name}`);
+        btn.textContent = item.icon;
+        const label = document.createElement('div');
+        label.className = 'choice-label';
+        label.textContent = item.name;
+        btn.appendChild(label);
+
+        btn.addEventListener('click', () => {
+          selectChoice(key);
+        });
+        choicesDiv.appendChild(btn);
+      });
+    }
+
+    let selectedChoice = null;
+
+    async function selectChoice(choiceKey) {
+      if (!gameRef || !playerNumber) return;
+
+      selectedChoice = choiceKey;
+      statusText.textContent = `You selected ${ITEMS[choiceKey].name}. Waiting for opponent...`;
+
+      // Disable buttons to prevent multiple clicks
+      Array.from(choicesDiv.children).forEach(btn => btn.disabled = true);
+
+      try {
+        await gameRef.child(`${playerNumber}/choice`).set(choiceKey);
+      } catch (e) {
+        statusText.textContent = 'Error sending choice: ' + e.message;
+        Array.from(choicesDiv.children).forEach(btn => btn.disabled = false);
+      }
+    }
+
+    // Listen for game updates
+    function listenForGameUpdates() {
+      if (!matchId) return;
+      if (gameRef) gameRef.off();
+
+      gameRef = db.ref(`matches/${matchId}`);
+
+      gameRef.on('value', snapshot => {
+        const data = snapshot.val();
+        if (!data) {
+          statusText.textContent = 'Match data lost.';
+          return;
+        }
+
+        if (!data.started) {
+          statusText.textContent = 'Waiting for opponent to join...';
+          opponentNameLabel.textContent = 'Waiting for opponent...';
+          resetCards();
+          Array.from(choicesDiv.children).forEach(btn => btn.disabled = true);
+          return;
+        }
+
+        // Show opponent name
+        if (data[playerNumber]) {
+          playerNameLabel.textContent = data[playerNumber].name || currentUser.displayName;
+        }
+        if (data[opponentId]) {
+          opponentNameLabel.textContent = data[opponentId].name || 'Opponent';
+        } else {
+          opponentNameLabel.textContent = 'Waiting for opponent...';
+        }
+
+        // Show choices and flip cards if both chosen
+        const playerChoice = data[playerNumber]?.choice;
+        const opponentChoice = data[opponentId]?.choice;
+
+        if (playerChoice) {
+          playerCardBack.textContent = ITEMS[playerChoice].icon;
+          playerCardInner.classList.add('flipped');
+        } else {
+          playerCardBack.textContent = '?';
+          playerCardInner.classList.remove('flipped');
+        }
+        if (opponentChoice) {
+          opponentCardBack.textContent = ITEMS[opponentChoice].icon;
+          opponentCardInner.classList.add('flipped');
+        } else {
+          opponentCardBack.textContent = '?';
+          opponentCardInner.classList.remove('flipped');
+        }
+
+        // Determine and show result if both chose
+        if (playerChoice && opponentChoice) {
+          const result = determineResult(playerChoice, opponentChoice);
+          if (result === 'win') {
+            statusText.innerHTML = `<span class="win-text">You Win! 🎉</span>`;
+          } else if (result === 'lose') {
+            statusText.innerHTML = `<span class="lose-text">You Lose. 😞</span>`;
+          } else {
+            statusText.innerHTML = `<span class="tie-text">It's a Tie! 🤝</span>`;
+          }
+
+          // Reset after 3 seconds
+          setTimeout(() => {
+            // Clear choices to allow next round
+            gameRef.child(`${playerNumber}/choice`).set(null);
+            gameRef.child(`${opponentId}/choice`).set(null);
+            statusText.textContent = 'Make your choice!';
+            selectedChoice = null;
+            Array.from(choicesDiv.children).forEach(btn => btn.disabled = false);
+          }, 3000);
+        } else {
+          // Enable choices if player's turn and no choice selected yet
+          if (!playerChoice) {
+            statusText.textContent = 'Make your choice!';
+            Array.from(choicesDiv.children).forEach(btn => btn.disabled = false);
+          } else {
+            statusText.textContent = 'Waiting for opponent...';
+            Array.from(choicesDiv.children).forEach(btn => btn.disabled = true);
+          }
+        }
+      });
+    }
+
+    function determineResult(playerChoice, opponentChoice) {
+      if (playerChoice === opponentChoice) return 'tie';
+
+      if (ITEMS[playerChoice].beats.includes(opponentChoice)) return 'win';
+
+      if (ITEMS[opponentChoice].beats.includes(playerChoice)) return 'lose';
+
+      // Defensive fallback (if no rules match)
+      return 'tie';
+    }
+  </script>
+</body>
+</html>
