@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endorsements - My Write Time</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #f0f4ff, #ffffff);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #3a3a8c;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #2b2b6f;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .endorsements {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .endorsement-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .endorsement-card:hover {
+      transform: translateY(-5px);
+    }
+    .endorsement-card p {
+      font-style: italic;
+      margin: 0 0 1rem;
+    }
+    .endorsement-card span {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: #3a3a8c;
+    }
+    .partner {
+      margin: 3rem auto;
+      text-align: center;
+    }
+    .partner-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .partner-logo {
+      width: 120px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .partner-content {
+      text-align: left;
+      max-width: 550px;
+    }
+    .partner-content h3 a {
+      color: #3a3a8c;
+      text-decoration: none;
+      font-size: 1.6rem;
+    }
+    .partner-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    .contact-section {
+      margin: 4rem auto;
+      text-align: center;
+      background: #eef0ff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .contact-section a {
+      color: #3a3a8c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      background: #3a3a8c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+    }
+    footer p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+  <a href="index.html" class="nav-link" id="nav-home">Home</a>
+  <a href="submit.html" class="nav-link" id="nav-submit">Submit Competition</a>
+  <a href="calendar.html" class="nav-link" id="nav-calendar">Calendar</a>
+  <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
+    <a href="endorsements.html" class="nav-link" id="nav-endorsements">Endorsements</a>
+  </nav>
+
+  <header>
+    <h1>Endorsements</h1>
+    <p>See what people are saying about My Write Time</p>
+  </header>
+
+  <div class="container">
+    <section class="endorsements">
+      <!-- Replace this section with real reviews when available -->
+      <div class="endorsement-card">
+        <p>No reviews have been added yet. Be the first to share your thoughts about My Write Time!</p>
+        <span>— Coming Soon</span>
+      </div>
+    </section>
+
+    <section class="partner">
+      <h2>Partner Spotlight</h2>
+      <div class="partner-card">
+        <img src="icon.svg" alt="Cornuvotia Logo" class="partner-logo">
+        <div class="partner-content">
+          <h3><a href="https://cornuvotia.net" target="_blank" rel="noopener">Cornuvotia</a></h3>
+          <p>
+            A collaborative and competitive writing platform for everyone. On Cornuvotia, stories move in cycles 
+            and are a community effort. Create a story and set your own terms for writing speed and direction, 
+            or continue someone else's tale. It’s an easy and exciting way to practice your writing skills — 
+            inspire or get inspired.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <p>If you would like to be shown on this section of <strong>MyWriteTime.com</strong>, contact me at 
+        <a href="mailto:contact@mywritetime.com">contact@mywritetime.com</a>.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Write Time. All Rights Reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+  </footer>
+</body>
+</html>

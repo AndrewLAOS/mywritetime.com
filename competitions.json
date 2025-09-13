@@ -1065,32 +1065,6 @@
     "recommended": false
   },
   {
-    "name": "Gemini Magazine Flash Fiction Prize",
-    "url": "https://gemini-magazine.com/flash-fiction-contest-2025-2/",
-    "genre": "Flash Fiction",
-    "wordCount": "1,000 words or less",
-    "lines": null,
-    "fee": 8,
-    "prize": 1000,
-    "eligibility": "International",
-    "deadline": "2025-09-02",
-    "description": "Annual flash fiction contest with cash prize and publication.",
-    "recommended": false
-  },
-  {
-    "name": "FundsforWriters Fiction/Creative Nonfiction Contest",
-    "url": "https://fundsforwriters.com/contests/",
-    "genre": "Fiction or Creative Nonfiction",
-    "wordCount": "Up to 6,000 words",
-    "lines": null,
-    "fee": 20,
-    "prize": null,
-    "eligibility": "International",
-    "deadline": "2025-09-07",
-    "description": "Looking for spectacular stories—up to 6,000 words, fiction or creative nonfiction.",
-    "recommended": false
-  },
-  {
     "name": "Aesthetica Creative Writing Award",
     "url": "https://letterreview.com/writing-contest-list/",
     "genre": "Poetry and Short Fiction",
@@ -1111,7 +1085,7 @@
     "lines": null,
     "fee": 20,
     "prize": 3000,
-    "eligibility": "Emerging writers, international",
+    "eligibility": "Emerging Authors",
     "deadline": "2025-08-25",
     "description": "International contest for new writers—with publication, cash prizes, agency review.",
     "recommended": false
@@ -1124,7 +1098,7 @@
     "lines": null,
     "fee": 4,
     "prize": 500,
-    "eligibility": "International",
+    "eligibility": "All Ages",
     "deadline": "2025-09-10",
     "description": "Open to all poets; cash prizes and special reading event.",
     "recommended": false
@@ -1150,7 +1124,7 @@
     "lines": null,
     "fee": 15,
     "prize": 1000,
-    "eligibility": "International, age 16+",
+    "eligibility": "College Students",
     "deadline": "2025-09-30",
     "description": "Exceptional unpublished nature writing; cash prize + retreat week.",
     "recommended": false
@@ -1166,19 +1140,6 @@
     "eligibility": "International and under‑16s",
     "deadline": "2025-09-30",
     "description": "Poetry inspired by Charles Frederick Worth; publication and performance opportunity.",
-    "recommended": false
-  },
-  {
-    "name": "Calibre Audio Inclusive Voices Short Story Competition",
-    "url": "https://blog.papertrue.com/writing-contests-2025/",
-    "genre": "Short Story",
-    "wordCount": "Up to 550 words",
-    "lines": null,
-    "fee": 0,
-    "prize": null,
-    "eligibility": "International, inclusive to print disabilities",
-    "deadline": "2025-09-05",
-    "description": "Accessible short story competition celebrating disability inclusion.",
     "recommended": false
   },
   {
@@ -1245,71 +1206,6 @@
     "deadline": "2025-08-01",
     "description": "Annual short story contest worldwide; anthology publication.",
     "recommended": false
-  },
-  {
-    "name": "Unleash WIP Prize",
-    "url": "https://www.karenosman.com/writingcompetitions2025",
-    "genre": "Book‑length (any genre)",
-    "wordCount": "WIP sample up to 25 pages",
-    "lines": null,
-    "fee": 35,
-    "prize": 500,
-    "eligibility": "International",
-    "deadline": "2025-07-16",
-    "description": "Support for emerging writers with coaching, feedback, and feature in Unleash Lit.",
-    "recommended": false
-  },
-  {
-    "name": "Book Pipeline Adaptation Contest",
-    "url": "https://www.karenosman.com/writingcompetitions2025",
-    "genre": "Published Book or Short Story (for adaptation)",
-    "wordCount": "First 5,000 words + synopsis",
-    "lines": null,
-    "fee": 10,
-    "prize": null,
-    "eligibility": "Published or self‑published works",
-    "deadline": "2025-08-15",
-    "description": "Adaptation contest for book/short story to film/TV professionals.",
-    "recommended": false
-  },
-  {
-    "name": "HG Wells Short Story Competition",
-    "url": "https://blog.papertrue.com/writing-contests-2025/",
-    "genre": "Multiple genres (Short Fiction, Nonfiction, Poetry, Books)",
-    "wordCount": "Varies by category",
-    "lines": null,
-    "fee": 20,
-    "prize": 1000,
-    "eligibility": "International",
-    "deadline": "2025-07-01",
-    "description": "Quarterly competition across genres with cash awards and publication/anthology consideration.",
-    "recommended": false
-  },
-  {
-    "name": "Write the World Short Story Competition",
-    "url": "https://blog.papertrue.com/writing-contests-2025/",
-    "genre": "Micro fiction",
-    "wordCount": "100 words only",
-    "lines": null,
-    "fee": 0,
-    "prize": 100,
-    "eligibility": "Young writers (13–19)",
-    "deadline": "2025-08-25",
-    "description": "Short story contest for young writers; themed with feedback and publication.",
-    "recommended": false
-  },
-  {
-    "name": "The Iowa Short Fiction Award & John Simmons Short Fiction Award",
-    "url": "https://uipress.uiowa.edu/resources/prospective-authors/iowa-short-fiction-award",
-    "genre": "Short Story",
-    "wordCount": "Booklength Manuscript",
-    "lines": null,
-    "fee": 0,
-    "prize": 1000,
-    "eligibility": "All Ages",
-    "deadline": "2025-08-31",
-    "description": "For first collections of short fiction.",
-  "recommended": false
   },
   {
     "name": "The International Writers' Collective - Short Story Prize",
@@ -1598,19 +1494,6 @@
     "recommended": false
   },
   {
-    "name": "CBC Short Story Prize",
-    "url": "https://www.cbc.ca/",
-    "genre": "Short Story",
-    "wordCount": "Up to 2,500 words",
-    "lines": null,
-    "fee": 0,
-    "prize": 6000,
-    "eligibility": "Canadian citizens and permanent residents",
-    "deadline": "2025-09-07",
-    "description": "Annual Canadian prize for original unpublished short stories.",
-    "recommended": false
-  },
-  {
     "name": "Jeff Sharlet Memorial Award for Veterans",
     "url": "https://iowareview.org/",
     "genre": "Fiction, Nonfiction, Poetry",
@@ -1647,32 +1530,6 @@
     "eligibility": "Previously unpublished works of nonfiction",
     "deadline": "2025-09-19",
     "description": "Prize for outstanding literary nonfiction manuscript.",
-    "recommended": false
-  },
-  {
-    "name": "The Moth Short Story Prize",
-    "url": "https://www.themothmagazine.com/",
-    "genre": "Short Story",
-    "wordCount": "Up to 5,000 words",
-    "lines": null,
-    "fee": 0,
-    "prize": 3000,
-    "eligibility": "International",
-    "deadline": "2025-09-05",
-    "description": "Annual prize for original short stories.",
-    "recommended": false
-  },
-  {
-    "name": "Momaya Short Story Award",
-    "url": "https://www.momayapress.com/",
-    "genre": "Short Story",
-    "wordCount": "Up to 3,000 words",
-    "lines": null,
-    "fee": 0,
-    "prize": 1500,
-    "eligibility": "International",
-    "deadline": "2025-09-11",
-    "description": "International short story prize with anthology publication.",
     "recommended": false
   },
   {
