@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <title>MyWriteTime – Writing Competitions, Contests, and Resources for Writers</title>
-    <meta name="description" content="Discover the best writing competitions, contests, and resources for writers and poets. Improve your craft, submit work, and stay updated with MyWriteTime.">
-    <link rel="canonical" href="https://mywritetime.com/"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyWriteTime – Writing Competitions, Contests, and Resources for Writers</title>
+  <meta name="description" content="Discover the best writing competitions, contests, and resources for writers and poets. Improve your craft, submit work, and stay updated with MyWriteTime." />
+  <link rel="canonical" href="https://mywritetime.com/" />
+
   <!-- Cronitor RUM -->
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
+  <script async src="https://rum.cronitor.io/script.js"></script>
+  <script>
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '89e3497c6d84b34955e4eb477b0079d8' });
-</script>
+  </script>
 
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="hfOWuCNEmRO4TQlNgaTGIg" async></script>
+  <!-- Ahrefs Analytics -->
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="hfOWuCNEmRO4TQlNgaTGIg" async></script>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K34FCY36K"></script>
   <script>
@@ -20,12 +25,7 @@
     gtag('js', new Date());
     gtag('config', 'G-0K34FCY36K');
   </script>
- 
-  <!-- Meta Basics -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Write Time – Writing Competitions with Cash Prizes</title>
-  <meta name="description" content="Discover upcoming writing competitions with prizes, deadlines, and filters for young and creative writers." />
+
   <meta name="theme-color" content="#007bff" />
 
   <!-- Favicon -->
@@ -35,7 +35,7 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="My Write Time – Writing Contests for Young Writers" />
   <meta property="og:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
   <meta property="og:image" content="https://mywritetime.com/social-preview.png" />
@@ -48,25 +48,26 @@
   <meta name="twitter:description" content="Explore free and paid contests for youth writers. Submit a contest or find one to enter today." />
   <meta name="twitter:image" content="https://mywritetime.com/social-preview.png" />
 
+  <!-- JSON-LD Organization -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "My Write Time",
-  "url": "https://mywritetime.com",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://mywritetime.com/logo.png",
-    "width": 192,
-    "height": 192
-  },
-  "sameAs": [
-    "https://www.facebook.com/mywritetime",
-    "https://www.instagram.com/mywritetime",
-    "https://www.linkedin.com/company/mywritetime"
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "My Write Time",
+    "url": "https://mywritetime.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mywritetime.com/logo.png",
+      "width": 192,
+      "height": 192
+    },
+    "sameAs": [
+      "https://www.facebook.com/mywritetime",
+      "https://www.instagram.com/mywritetime",
+      "https://www.linkedin.com/company/mywritetime"
+    ]
+  }
+  </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -83,7 +84,6 @@
       --text: #e2e8f0; --text-light: #a0aec0; --accent: #63b3ed; --border: #4a5568;
       --header-bg: #2a3341; --header-text: #e2e8f0;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: Poppins, sans-serif; }
     body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; transition: .3s; }
 
@@ -91,87 +91,36 @@
       background: var(--header-bg); box-shadow: var(--card-shadow); padding: 1rem 2rem;
       display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem;
     }
-    .nav-link {
-      color: var(--header-text); font-weight: 600; text-decoration: none;
-      font-size: 1rem; padding-bottom: 3px; border-bottom: 3px solid transparent; transition: .3s;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--accent); border-bottom-color: var(--accent);
-    }
+    .nav-link { color: var(--header-text); font-weight: 600; text-decoration: none; font-size: 1rem; padding-bottom: 3px; border-bottom: 3px solid transparent; transition: .3s; }
+    .nav-link:hover, .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-    header {
-      background: var(--header-bg); color: var(--header-text); padding: 2.5rem 2rem;
-      text-align: center; box-shadow: var(--card-shadow); margin-bottom: 2rem;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem;
-    }
+    header { background: var(--header-bg); color: var(--header-text); padding: 2.5rem 2rem; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 2rem; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem; }
     header p { font-size: 1.1rem; opacity: .9; margin-bottom: 2rem; }
 
-    .top-bar {
-      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center;
-    }
-    .search-wrap {
-      display: flex; align-items: center; border: 1px solid var(--border); border-radius: 8px;
-      padding: .5rem 1rem; background: var(--card); box-shadow: var(--card-shadow); transition: .3s;
-    }
+    .top-bar { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center; }
+    .search-wrap { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 8px; padding: .5rem 1rem; background: var(--card); box-shadow: var(--card-shadow); transition: .3s; }
     .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,123,255,.25); }
-    .search-wrap input {
-      border: none; background: transparent; padding: .2rem .5rem; min-width: 220px;
-      font-size: 1rem; color: inherit; outline: none;
-    }
+    .search-wrap input { border: none; background: transparent; padding: .2rem .5rem; min-width: 220px; font-size: 1rem; color: inherit; outline: none; }
 
     .toggle-wrap { display: flex; align-items: center; gap: .6rem; cursor: pointer; }
-    .toggle {
-      position: relative; width: 48px; height: 26px; background: var(--border);
-      border-radius: 13px; transition: .25s;
-    }
-    .toggle::after {
-      content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
-      border-radius: 50%; background: #fff; transition: .25s;
-    }
+    .toggle { position: relative; width: 48px; height: 26px; background: var(--border); border-radius: 13px; transition: .25s; }
+    .toggle::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: .25s; }
     [data-theme="dark"] .toggle { background: var(--accent); }
     [data-theme="dark"] .toggle::after { transform: translateX(22px); }
 
-    .filters {
-      display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem;
-      justify-content: center; background: var(--card); box-shadow: var(--card-shadow);
-      border-radius: 10px; max-width: 1200px; margin: 1rem auto;
-    }
-    .filters label {
-      display: flex; flex-direction: column; font-size: .95rem; color: var(--text-light);
-    }
-    .filters select, .filters input[type=number], .filters input[type=date] {
-      margin-top: .4rem; border: 1px solid var(--border); padding: .6rem .8rem;
-      border-radius: 6px; background: var(--bg); color: var(--text);
-      font-size: .95rem; outline: none; transition: .3s;
-    }
+    .filters { display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem; justify-content: center; background: var(--card); box-shadow: var(--card-shadow); border-radius: 10px; max-width: 1200px; margin: 1rem auto; }
+    .filters label { display: flex; flex-direction: column; font-size: .95rem; color: var(--text-light); }
+    .filters select, .filters input[type=number], .filters input[type=date] { margin-top: .4rem; border: 1px solid var(--border); padding: .6rem .8rem; border-radius: 6px; background: var(--bg); color: var(--text); font-size: .95rem; outline: none; transition: .3s; }
     .filters select:focus, .filters input:focus { border-color: var(--accent); }
 
-    #recommended {
-      max-width: 1200px;
-      margin: 0 auto 2rem;
-      padding: 0 1rem;
-    }
-    #recommended h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    #recommended-results {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-      gap: 1.5rem;
-    }
+    #recommended { max-width: 1200px; margin: 0 auto 2rem; padding: 0 1rem; }
+    #recommended h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-bottom: 1rem; }
+    #recommended-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.5rem; }
 
-    #results {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem; padding: 2.5rem; max-width: 1200px; margin: 0 auto; flex-grow: 1;
-    }
-    .card {
-      background: var(--card); border-radius: 12px; box-shadow: var(--card-shadow);
-      padding: 1.8rem; display: flex; flex-direction: column; position: relative; transition: .3s;
-    }
+    #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; padding: 2.5rem; max-width: 1200px; margin: 0 auto; flex-grow: 1; }
+
+    .card { background: var(--card); border-radius: 12px; box-shadow: var(--card-shadow); padding: 1.8rem; display: flex; flex-direction: column; position: relative; transition: .3s; }
     .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,.15); }
     .card h3 { font-size: 1.25rem; margin-bottom: .7rem; color: var(--accent); }
     .card a { color: var(--accent); text-decoration: none; font-weight: 500; transition: .2s; }
@@ -179,31 +128,30 @@
     .meta { font-size: .9rem; color: var(--text-light); margin-bottom: .4rem; line-height: 1.5; }
     .meta strong { color: var(--text); }
 
-    .heart {
-      position: absolute; top: 18px; right: 18px; width: 24px; height: 24px; cursor: pointer;
-      fill: none; stroke: var(--text-light); stroke-width: 2; transition: .25s;
-    }
+    .heart { position: absolute; top: 18px; right: 18px; width: 24px; height: 24px; cursor: pointer; fill: none; stroke: var(--text-light); stroke-width: 2; transition: .25s; }
     .heart:hover { transform: scale(1.1); }
     .heart.fav { fill: var(--accent); stroke: var(--accent); }
 
     footer { text-align: center; font-size: .85rem; color: var(--text-light); padding: 1.5rem 0; margin-top: 2rem; }
 
     @media(max-width:768px){
-      header { padding: 1.5rem 1rem; } header h1 { font-size: 2.2rem; }
+      header { padding: 1.5rem 1rem; } 
+      header h1 { font-size: 2.2rem; }
       .filters { padding: 1rem; flex-direction: column; align-items: center; }
       #recommended-results, #results { padding: 1.5rem; grid-template-columns: 1fr; }
       .card { padding: 1.5rem; }
     }
   </style>
 </head>
+
 <body data-theme="light">
 <nav class="navbar">
   <a href="index.html" class="nav-link" id="nav-home">Home</a>
   <a href="submit.html" class="nav-link" id="nav-submit">Submit Competition</a>
   <a href="calendar.html" class="nav-link" id="nav-calendar">Calendar</a>
   <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="blog.html" class="nav-link">Blog</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="blog.html" class="nav-link">Blog</a>
 </nav>
 
 <header>
@@ -214,7 +162,7 @@
       <label for="searchInput" style="display:none;">Search competitions</label>
       <input id="searchInput" type="text" placeholder="Search competitions…" aria-label="Search competitions" />
     </div>
-    <div class="toggle-wrap" role="button" aria-label="Toggle dark mode" tabindex="0">
+    <div class="toggle-wrap" role="switch" aria-checked="false" aria-label="Toggle dark mode" tabindex="0">
       <div class="toggle"></div>
       <span style="font-size:.9rem;color:var(--text-light)">Dark mode</span>
     </div>
@@ -296,16 +244,10 @@
     © 2025 My Write Time &nbsp; | &nbsp;
     <a href="privacy.html">Privacy Policy</a> &nbsp; | &nbsp;
     <a href="terms.html">Terms of Service</a> &nbsp; | &nbsp;
-    <a class="__cf_email__" href="/cdn-cgi/l/email-protection"
-   data-cfemail="2a4945445e4b495e6a47535d58435e4f5e43474f04494547">
-  contact [at] mywritetime.com
-</a>
-
+    <a href="mailto:contact@mywritetime.com">contact [at] mywritetime.com</a>
   </p>
 </footer>
 
-
-<!-- Script -->
 <script>
   const $ = id => document.getElementById(id);
   const results = $('results'), searchInput = $('searchInput'), filterForm = $('filterForm');
@@ -316,147 +258,84 @@
     const newT = document.body.dataset.theme === 'light' ? 'dark' : 'light';
     document.body.dataset.theme = newT;
     localStorage.setItem('theme', newT);
+    document.querySelector('.toggle-wrap').setAttribute('aria-checked', newT==='dark');
   });
 
-  // Support keyboard toggle (space/enter)
-  document.querySelector('.toggle-wrap').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      document.querySelector('.toggle-wrap').click();
-    }
+  document.querySelector('.toggle-wrap').addEventListener('keydown', e => {
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); document.querySelector('.toggle-wrap').click(); }
   });
 
-  function wcOk(wc, r) {
-    if (!r) return true;
-    if (r === 'booklength') return wc === "Booklength Manuscript";
-    if (typeof wc !== 'number') return false;
-    return (r === 'lt500' ? wc < 500 :
-            r === '500to1000' ? wc >= 500 && wc <= 1000 :
-            r === '1000to2000' ? wc >= 1000 && wc <= 2000 :
-            r === 'gt2000' ? wc > 2000 : true);
+  function wcOk(wc,r){ if(!r) return true; if(r==='booklength') return wc==='Booklength Manuscript'; if(typeof wc!=='number') return false;
+    return r==='lt500'? wc<500 : r==='500to1000'? wc>=500&&wc<=1000 : r==='1000to2000'? wc>=1000&&wc<=2000 : r==='gt2000'? wc>2000 : true;
   }
-  function lnOk(ln, r) {
-    if (!r) return true;
-    if (r === 'booklength') return ln === "Booklength Manuscript";
-    if (typeof ln !== 'number') return false;
-    return (r === 'lt20' ? ln < 20 : r === '20to40' ? ln >= 20 && ln <= 40 : r === 'gt40' ? ln > 40 : true);
+  function lnOk(ln,r){ if(!r) return true; if(r==='booklength') return ln==='Booklength Manuscript'; if(typeof ln!=='number') return false;
+    return r==='lt20'? ln<20 : r==='20to40'? ln>=20&&ln<=40 : r==='gt40'? ln>40 : true;
   }
 
   let competitions = [];
 
-  function renderCard(c) {
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
-      <p class="meta">
-        <strong>Genre:</strong> ${c.genre} · 
-        <strong>Prize:</strong> ${c.prize ? '$' + c.prize : 'N/A'} · 
-        <strong>Fee:</strong> ${c.fee ? '$' + c.fee : 'Free'}
-      </p>
-      <p class="meta">
-        <strong>Deadline:</strong> ${c.deadline || 'N/A'} · 
-        <strong>Eligibility:</strong> ${c.eligibility || 'N/A'}<br>
-        <strong>Word Count:</strong> ${c.wordcount ?? 'N/A'} · 
-        <strong>Poetry Lines:</strong> ${c.lines ?? 'N/A'}
-      </p>
-      <p>${c.description || ''}</p>
-      <svg class="heart ${favSet.has(c.name) ? 'fav' : ''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
-        <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/>
-      </svg>
-    `;
-    // Heart toggle
-    const heart = card.querySelector('.heart');
-    heart.onclick = () => {
-      if (favSet.has(c.name)) { favSet.delete(c.name); }
-      else { favSet.add(c.name); }
-      localStorage.setItem('favs',
-      JSON.stringify([...favSet]));
+  function renderCard(c){
+    const card=document.createElement('article'); card.className='card';
+    card.innerHTML=`<h3><a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.name}</a></h3>
+      <p class="meta"><strong>Genre:</strong> ${c.genre} · <strong>Prize:</strong> ${c.prize? '$'+c.prize:'N/A'} · <strong>Fee:</strong> ${c.fee? '$'+c.fee:'Free'}</p>
+      <p class="meta"><strong>Deadline:</strong> ${c.deadline||'N/A'} · <strong>Eligibility:</strong> ${c.eligibility||'N/A'}<br><strong>Word Count:</strong> ${c.wordcount??'N/A'} · <strong>Poetry Lines:</strong> ${c.lines??'N/A'}</p>
+      <p>${c.description||''}</p>
+      <svg class="heart ${favSet.has(c.name)?'fav':''}" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-label="Favorite" role="button" tabindex="0">
+        <path d="M12 21S7 16.5 5 12.5C3 8.5 6 5 9 5c2 0 3 1.5 3 1.5S13 5 15 5c3 0 6 3.5 4 7.5S12 21 12 21Z"/></svg>`;
+    const heart=card.querySelector('.heart');
+    heart.onclick=()=>{
+      if(favSet.has(c.name)) favSet.delete(c.name); else favSet.add(c.name);
+      localStorage.setItem('favs',JSON.stringify([...favSet]));
       heart.classList.toggle('fav');
     };
-    // Make heart accessible by keyboard (space/enter)
-    heart.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        heart.click();
-      }
-    });
+    heart.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); heart.click(); } });
     return card;
   }
 
-  function render(arr) {
-    results.innerHTML = '';
-    if (!arr.length) {
-      results.innerHTML = '<p style="text-align:center;opacity:.5;font-style:italic;">No competitions found.</p>';
-      return;
-    }
-    arr.forEach(c => {
-      results.appendChild(renderCard(c));
-    });
-  }
+  function render(arr){ results.innerHTML=''; if(!arr.length){ results.innerHTML='<p style="text-align:center;opacity:.5;font-style:italic;">No competitions found.</p>'; return;} arr.forEach(c=>results.appendChild(renderCard(c))); }
 
-  function applyFilters() {
-    const s = searchInput.value.toLowerCase();
-    const genre = $('genre').value, wordRange = $('wordRange').value,
-          lineRange = $('lineRange').value, minPrize = Number($('minPrize').value),
-          elig = $('eligibility').value, dead = $('deadline').value, sort = $('sortBy').value;
-
-    let filtered = competitions.filter(c => {
-      if (s && !c.name.toLowerCase().includes(s)) return false;
-      if (genre && c.genre !== genre) return false;
-      if (!wcOk(c.wordcount, wordRange)) return false;
-      if (!lnOk(c.lines, lineRange)) return false;
-      if (minPrize && (!c.prize || c.prize < minPrize)) return false;
-      if (elig && c.eligibility !== elig) return false;
-      if (dead && c.deadline && c.deadline > dead) return false;
+  function applyFilters(){
+    const s=searchInput.value.toLowerCase(), genre=$('genre').value, wordRange=$('wordRange').value, lineRange=$('lineRange').value, minPrize=Number($('minPrize').value), elig=$('eligibility').value, dead=$('deadline').value, sort=$('sortBy').value;
+    let filtered=competitions.filter(c=>{
+      if(s&&!c.name.toLowerCase().includes(s)) return false;
+      if(genre&&c.genre!==genre) return false;
+      if(!wcOk(c.wordcount,wordRange)) return false;
+      if(!lnOk(c.lines,lineRange)) return false;
+      if(minPrize&&(!c.prize||c.prize<minPrize)) return false;
+      if(elig&&c.eligibility!==elig) return false;
+      if(dead&&c.deadline&&c.deadline>dead) return false;
       return true;
     });
-
-    if (sort) {
-      if (sort === 'feeAsc') filtered.sort((a, b) => (a.fee || 0) - (b.fee || 0));
-      else if (sort === 'feeDesc') filtered.sort((a, b) => (b.fee || 0) - (a.fee || 0));
-      else if (sort === 'prizeDesc') filtered.sort((a, b) => (b.prize || 0) - (a.prize || 0));
-      else if (sort === 'deadlineAsc') filtered.sort((a, b) => {
-        if (!a.deadline) return 1;
-        if (!b.deadline) return -1;
+    if(sort){
+      if(sort==='feeAsc') filtered.sort((a,b)=>(a.fee||0)-(b.fee||0));
+      else if(sort==='feeDesc') filtered.sort((a,b)=>(b.fee||0)-(a.fee||0));
+      else if(sort==='prizeDesc') filtered.sort((a,b)=>(b.prize||0)-(a.prize||0));
+      else if(sort==='deadlineAsc') filtered.sort((a,b)=>{
+        if(!a.deadline) return 1;
+        if(!b.deadline) return -1;
         return a.deadline.localeCompare(b.deadline);
       });
     }
-
     render(filtered);
   }
 
   fetch('competitions.json')
-    .then(res => res.json())
-    .then(data => {
-      competitions = data;
-
-      // Recommended section
-      const recommended = competitions.filter(c => c.recommended);
-      const recommendedContainer = document.getElementById('recommended-results');
-      recommendedContainer.innerHTML = '';
-      if (recommended.length === 0) {
-        recommendedContainer.innerHTML = '<p style="opacity: 0.7; font-style: italic;">No recommended competitions at the moment.</p>';
-      } else {
-        recommended.forEach(c => {
-          recommendedContainer.appendChild(renderCard(c));
-        });
-      }
-
+    .then(res=>res.json())
+    .then(data=>{
+      competitions=data;
+      const recommended=competitions.filter(c=>c.recommended);
+      const recContainer=$('recommended-results'); recContainer.innerHTML='';
+      if(!recommended.length) recContainer.innerHTML='<p style="opacity:0.7;font-style:italic;">No recommended competitions at the moment.</p>';
+      else recommended.forEach(c=>recContainer.appendChild(renderCard(c)));
       applyFilters();
     })
-    .catch(err => {
-      results.innerHTML = `
-        <p style="color:red;text-align:center;">
-          ⚠️ Failed to load competitions.json.<br/>
-          <button onclick="location.reload()">Retry</button>
-        </p>`;
+    .catch(err=>{
+      results.innerHTML='<p style="color:red;text-align:center;">⚠️ Failed to load competitions.json.<br/><button onclick="location.reload()">Retry</button></p>';
       console.error(err);
     });
 
-  // Filter and search event listeners
-  searchInput.addEventListener('input', applyFilters);
-  filterForm.addEventListener('change', applyFilters);
+  searchInput.addEventListener('input',applyFilters);
+  filterForm.addEventListener('change',applyFilters);
 </script>
 </body>
 </html>
